@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/LoginPageStyles.css">
+    <title>login</title>
+    <script src="https://kit.fontawesome.com/e60263fb6b.js" crossorigin="anonymous"></script>
+
+    <style>
+        .img::before {
+            content: "";
+            position: fixed;
+            z-index: -1;
+            background-position: center;
+            background-size: cover;
+            /* position: relative; */
+            width: 100%;
+            height: 100vh;
+            background-image: url('Images/user.jpg');
+            filter: opacity(10%);
+            filter: brightness(5%);
+            filter: contrast(2);
+            filter: grayscale(20%);
+            filter: blur(0.7px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img">
+        <div class="logbox">
+            <img class="logo_occasion" src="/Images/Logo.png" alt="">
+            <div class="btnbx">
+                <a href="/login"><button type="button" class="dis"> Sign In </button></a>
+                <a href="/signup"><button type="button"> Sign Up </button></a>
+            </div>
+            <form action="/signup" name="form1" onsubmit="return validateform()" method="post">
+                <div class="inputgroup">
+                    <div class="inputfield" id="name">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Name" name="name">
+                    </div>
+                    <div class="inputfield">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="Email" name="email">
+                    </div>
+                    <div class="inputfield">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <input type="password" placeholder="Password" name="password">
+                    </div>
+                    <div class="getStarted">
+                        <button type="submit">Get&nbsp;started</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function validateform() {
+            let name = document.form1.name.value;
+            let email = document.form1.email.value;
+            let password = document.form1.password.value;
+
+
+            if (name == null || name == "") {
+                alert("Name can't be blank");
+                return false;
+            }
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+
+                if (password.length < 8) {
+                    alert("Password must be at least 8 characters long.");
+                    return false;
+                }
+                return true;
+            }
+            else {
+                alert("You have entered an invalid email address!")
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

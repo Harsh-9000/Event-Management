@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <!-- Box Icon CDN Link -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Our style sheet -->
+  <link rel="stylesheet" href="/css/DisplayPageStyles.css">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- Friconix -->
+  <script defer src="https://friconix.com/cdn/friconix.js"></script>
+</head>
+
+<body>
+  <%- include("partials/header") -%>
+    <div class="whole-web-page">
+      <!-- text with background image section -->
+      <div class="container-background-image">
+        <div class="px-4 py-5 text-center">
+          <h1 class="display-5 bg-image-heading-h">Venues</h1>
+          <div class="col-lg-6 mx-auto">
+            <p class=" mb-4 bg-image-text-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, esse
+              cupiditate cum repudiandae eius dolore corrupti architecto accusamus minus assumenda odio aspernatur! Sit
+              in aliquid provident tempore neque minus corrupti maiores et quod quam reprehenderit laboriosam ab dolor,
+              molestiae laborum officiis rem vitae quia expedita. Ullam quisquam nihil ipsa dolore culpa sint excepturi.
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- DropDown Side bar Menu section with Filter    -->
+      <div class="Filter-search-section">
+        <!-- Side bar -->
+        <div class="sidebar close">
+          <div class="logo-details">
+            <span class="logo_name">OccasionMate</span>
+          </div>
+
+          <!-- side nav bar links -->
+          <form action="" method="post">
+            <ul class="nav-links">
+              <!-- Cuisines Section -->
+              <li>
+                <div class="iocn-link">
+                  <a href="#">
+                    <i class='bx bxl-c-plus-plus'></i>
+                    <span class="link_name">Veg / Non-Veg</span>
+                  </a>
+                  <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                  <li><label class="radio"><input name="food" type="radio" class="venue-food-filter venue-filter-button"
+                        value="Veg">Veg
+                      <span></span></label></li>
+
+                  <li><label class="radio"><input name="food" type="radio" class="venue-food-filter venue-filter-button"
+                        value="Non-Veg">Non-Veg
+                      <span></span></label></li>
+                </ul>
+              </li>
+
+              <!-- Budget section -->
+              <li>
+                <div class="iocn-link">
+                  <a href="#">
+                    <i class='bx bx-bold'></i>
+                    <span class="link_name">Budget</span>
+                  </a>
+                  <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu" id="menu-budget">
+
+                  <li><label class="radio"><input name="budget" type="radio"
+                        class="venue-budget-filter venue-filter-button" value="0, 400">Under &#x20B9;400
+                      <span></span></label></li>
+
+                  <li><label class="radio"><input name="budget" type="radio"
+                        class="venue-budget-filter venue-filter-button" value="401, 600">&#x20B9;401 to
+                      &#x20B9;600<span></span></label></li>
+
+                  <li><label class="radio"><input name="budget" type="radio"
+                        class="venue-budget-filter venue-filter-button" value="601, 800">&#x20B9;601 to
+                      &#x20B9;800<span></span></label></li>
+
+                  <li><label class="radio"><input name="budget" type="radio"
+                        class="venue-budget-filter venue-filter-button" value="801, 1000">&#x20B9;801 to
+                      &#x20B9;1000<span></span></label></li>
+
+                  <li><label class="radio"><input name="budget" type="radio"
+                        class="venue-budget-filter venue-filter-button" value="1001, 1200">&#x20B9;1001 to
+                      &#x20B9;1200<span></span></label>
+                  </li>
+
+                  <li><label class="radio"><input name="capacity" type="radio"
+                        class="venue-budget-filter venue-filter-button" value="1201, 1600">&#x20B9;1201 to
+                      &#x20B9;1600<span></span></label>
+                  </li>
+
+                  <li><label class="radio"><input name="capacity" type="radio"
+                        class="venue-budget-filter venue-filter-button"
+                        value="1601, 1000000">&#x20B9;1600+<span></span></label></li>
+
+                </ul>
+              </li>
+            </ul>
+            <button type="submit" class="button"><span></span>Apply Filter</a>
+          </form>
+        </div>
+
+        <!-- Content Section -->
+        <section class="home-section">
+          <div class="home-content">
+            <i class='bx bx-menu'></i>
+            <span class="text">Available Venues</span>
+
+          </div>
+          <div class="all-card-container">
+            <main class="grid">
+              <!-- card-1 -->
+
+              <% spaces.forEach(function(space){ %>
+                <article class="card-1 card">
+                  <img src="<%= space.images[0] %>" alt="">
+                  <div class="text">
+                    <h3 class="card_title">
+                      <a href="/venues/<%= space.id %>">
+                        <h3 class="card_title">
+                          <%= space.venue_name %>
+                        </h3>
+                      </a>
+                    </h3>
+                    <hr class="line-break">
+                    <p class="region-place"><i class='bx bxs-bank'></i>
+                      <%= space.space_type %>
+                    </p>
+                    <div class="first-div-card-info">
+                      <p class="card-sub-subtitle"><i class='bx bxs-map'></i>
+                        <%= space.venue_address %>
+                      </p>
+                    </div>
+                    <div class="content-first-div-card-info guests ">
+                      <p><i class='bx bx-home'></i>
+                        <%= space.capacity %> Guests
+                      </p>
+                    </div>
+                    <hr class="line-break">
+                    <div class="aligning-to-right price-button">
+                      <div class="content-second-div-card-info">
+                        <% if(space.veg_price && space.non_veg_price){ %>
+                          <p class="first-price">
+                            &#x20B9; <%= space.veg_price %> per plate
+                          </p>
+                          <p class="second-price">
+                            &#x20B9; <%= space.non_veg_price %> per plate
+                          </p>
+                          <% } else if(space.veg_price){ %>
+                            <p class="first-price">
+                              &#x20B9; <%= space.veg_price %> per plate
+                            </p>
+                            <% }else if(pace.non_veg_price){ %>
+                              <p class="second-price">
+                                &#x20B9; <%= space.non_veg_price %> per plate
+                              </p>
+                              <% } %>
+                      </div>
+                      <div class="button-container">
+                        <a href="/venues/<%= space.id %>/getquote" class="button"><span></span>Request Quote</a>
+                      </div>
+                </article>
+                <% }) %>
+
+            </main>
+          </div>
+        </section>
+      </div>
+
+
+      <%- include("partials/footer") -%>
+
+        <!-- Script Section -->
+        <script type="text/javascript" src="/script/DisplayPageScript.js"></script>
+        <script type="text/javascript" src="/script/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+          integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+          crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+          integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+          crossorigin="anonymous"></script>
+</body>
+
+</html>

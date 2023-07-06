@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Friconix -->
+    <script defer src="https://friconix.com/cdn/friconix.js"></script>
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="/css/VenueRegisterStyles.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <title>Responsive Regisration Form </title>
+
+    <link rel="icon" href="favicon.ico" />
+</head>
+
+<body>
+    <%- include("partials/header") -%>
+
+        <!-- Register Header -->
+        <section class="container-fluid" id="header">
+            <div class="register-header">
+                <img src="/Images/Register Header.jpg" alt="header image">
+                <div class="text">
+                    <h2>Join OccasionMate to change the way you Work
+                    </h2>
+                    <h5>Start earning right away! <br>
+                        Share your details and we'll reach out with next steps</h5>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registeration Section-->
+        <section id="register">
+            <div class="container">
+                <header>Registration</header>
+
+                <form action="/list-your-venue" method="post">
+                    <div class="form first">
+
+                        <div class="details venue">
+                            <span class="title"><i class="fi-xnluxl-file"></i> ADD VENUE INFORMATION</span>
+
+                            <div class="fields">
+                                <div class="input-field">
+                                    <label>Venue Name</label>
+                                    <input name="venueName" type="text" placeholder="Enter venue name">
+                                    <div class="error-hint hidden">
+                                        <p>Venue Name is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Country</label>
+                                    <input name="venueCountry" type="itext" value="India" readonly placeholder="India">
+                                </div>
+
+                                <div class="input-field">
+                                    <label>City</label>
+                                    <select name="venueCity" readonly class="city-selector"
+                                        data-placeholder="Select your city" title="Select Your City">
+                                        <option value="">Select City</option>;
+                                        <option value="Delhi">Delhi </option>;
+                                        <option value="Gurgaon">Gurgaon </option>;
+                                        <option value="Mumbai">Mumbai </option>;
+                                        <option value="Hyderabad">Hyderabad </option>;
+                                        <option value="Bangalore">Bangalore </option>;
+                                        <option value="Pune">Pune </option>;
+                                        <option value="Kolkata">Kolkata </option>;
+                                        <option value="Jaipur">Jaipur </option>;
+                                        <option value="Lucknow">Lucknow </option>;
+                                        <option value="Chennai">Chennai </option>;
+                                    </select>
+                                    <div class="error-hint hidden">
+                                        <p>City is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Venue Address</label>
+                                    <input name="venueAddress" type="itext" placeholder="Complete address of venue">
+                                    <div class="error-hint hidden">
+                                        <p>Venue Address is required</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="details contact">
+                            <span class="title"><i class="fi-ctlrxl-phone-solid"></i> ADD CONTACT INFORMATION</span>
+
+                            <div class="fields">
+                                <div class="input-field">
+                                    <label>Full Name</label>
+                                    <input name="ownerName" type="text"
+                                        placeholder="Venue Owner/Authorized Person's Name">
+                                    <div class="error-hint hidden">
+                                        <p>Your Name is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Phone Number</label>
+                                    <input name="ownerNumber" type="text"
+                                        placeholder="Owner/Authorized Person's Mobile No.">
+                                    <div class="error-hint hidden">
+                                        <p>Your Number is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Email</label>
+                                    <input name="ownerMail" type="email" placeholder="Official Email-ID">
+                                    <div class="error-hint hidden">
+                                        <p>Your Email is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Password</label>
+                                    <input name="ownerPassword" type="password" placeholder="Password">
+                                    <div class="error-hint hidden">
+                                        <p>Your Password is required</p>
+                                    </div>
+                                    <div class="error-hint hidden">
+                                        <p>Password length should be atleast 8</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="buttons">
+                            <button class="sumbit" type="sumbit" name="button">SUBMIT</button>
+                        </div>
+
+                </form>
+            </div>
+        </section>
+
+        <%- include("partials/footer") -%>
+
+            <!-- Bootstrap Scripts -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+                crossorigin="anonymous"></script>
+
+            <!-- jQuery Scripts -->
+            <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+            <!-- Javascript -->
+            <script type="text/javascript" src="/script/VenueRegisterScript.js"></script>
+            <script type="text/javascript" src="/script/script.js"></script>
+</body>
+
+</html>

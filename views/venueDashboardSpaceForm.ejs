@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/VendorDashboardDetailsEditPageStyles.css">
+    <link rel="stylesheet" href="/css/dashboardStyles.css">
+    <script src="https://kit.fontawesome.com/e60263fb6b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <%- include("partials/venueDashboardSidebar") -%>
+
+        <div class="container">
+            <%- include("partials/dashboardHeader") -%>
+
+                <div class="content">
+                    <div class="profile">
+                        <div class="new">
+                            <% if (editing) { %>
+                                <i class="fa-solid fa-user"></i>&nbsp;&nbsp; <h2>Edit Details</h2>
+                                <% } else { %>
+                                    <i class="fa-solid fa-user"></i>&nbsp;&nbsp; <h2>Add Details</h2>
+                                    <% } %>
+                        </div>
+
+                        <form
+                            action="/venue-dashboard/<%= VenueID %>/spaces/<% if (editing) { %><%= space.id %>/edit<% } else { %>add<% } %>"
+                            method="post">
+                            <div class="info">
+                                <div class="column-1">
+                                    <h3>Space-Type</h3>
+                                    <input name="space_type" type="text" class="input"
+                                        value="<% if (editing) { %><%= space.space_type %><% } %>">
+
+                                    <h3>Veg Price</h3>
+                                    <input name="veg_price" type="text" class="input"
+                                        value="<% if (editing) { %><%= space.veg_price %><% } %>">
+
+                                    <h3>Non-Veg Price</h3>
+                                    <input type="text" name="non_veg_price" class="input"
+                                        value="<% if (editing) { %><%= space.non_veg_price %><% } %>">
+
+
+                                    <h3>Capacity</h3>
+                                    <input type="text" name="capacity" class="input"
+                                        value="<% if (editing) { %><%= space.capacity %><% } %>">
+
+                                    <h3>Facilities Available</h3>
+                                    <textarea name="facility_available" id="" class="" cols="50"
+                                        rows="7"><% if (editing) { %><%= space.facility_available %><% } %></textarea>
+
+
+                                </div>
+
+                                <div class="column-2">
+                                    <h3>Image of the Space</h3>
+                                    <textarea name="image" id="" class="" cols="50"
+                                        rows="6"><% if (editing) { %><%= space.images %><% } %></textarea>
+
+                                    <h3>Rooms Available</h3>
+                                    <input type="text" name="no_of_rooms" class="input"
+                                        value="<% if (editing) { %><%= space.no_of_rooms %><% } %>">
+
+                                    <h3>Room Price</h3>
+                                    <input type="text" name="room_price" class="input"
+                                        value="<% if (editing) { %><%= space.room_price %><% } %>">
+
+                                    <h3>About</h3>
+                                    <textarea name="about" id="" class="" cols="50"
+                                        rows="7"><% if (editing) { %><%= space.about %><% } %></textarea>
+
+                                    <% if (editing) { %>
+                                        <input type="hidden" value="<%= space.id %>" name="spaceId">
+                                        <% } %>
+                                </div>
+                            </div>
+
+                            <button class="btn" type="submit">
+                                <% if (editing) { %>Update Space<% } else { %>Add Space<% } %>
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+        </div>
+</body>
+
+</html>

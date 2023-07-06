@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venue</title>
+    <!-- Friconix -->
+    <script defer src="https://friconix.com/cdn/friconix.js"></script>
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="/css/VenuePageStyles.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <%- include("partials/header") -%>
+
+        <div class="main-content">
+            <div class="left-half">
+                <div class="slideshow-container">
+
+                    <% for(let i=0; i < space.images.length; i++){ %>
+                        <div class="mySlides">
+                            <img src="<%= space.images[i] %>" class="changing-pics">
+                        </div>
+                        <% } %>
+
+                            <a class="prev" onclick="plusSlides(-1)">❮</a>
+                            <a class="next" onclick="plusSlides(1)">❯</a>
+                            <div class="stats">
+                            </div>
+                </div>
+
+                <div class="box">
+                    <div class="intro-con">
+                        <div class="column-1">
+                            <h3>
+                                <%= space.venue_name %>
+                            </h3>
+                            <p class="location"> <img src="https://cdn-icons-png.flaticon.com/512/3425/3425077.png"
+                                    alt="" id="loc"> Space: <%= space.space_type %>
+                            </p>
+                            <p class="sr"> <img src="https://cdn-icons-png.flaticon.com/512/3135/3135803.png" alt="">
+                                <%= space.venue_address %>
+                            </p>
+                        </div>
+
+                        <div class="column-2">
+
+                            <div class="submit-button">
+                                <a href="/venues/<%= space.id %>/getquote"><button class="submit" style="width:100%"
+                                        type="button"> <img src="https://cdn-icons-png.flaticon.com/512/126/126473.png"
+                                            alt=""> Get Best
+                                        Deal</button></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="box">
+                    <div class="box-head">
+                        <img src="https://cdn-icons-png.flaticon.com/512/665/665049.png" alt="">
+                        <div class="des-box-head">About</div>
+                    </div>
+                    <div class="box-body" id="summary">
+                        <p>
+                            <%= space.about %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="right-half">
+                <div class="box-2">
+                    <div class="main-des">
+                        <div class="prices">
+                            <% if(space.veg_price && space.non_veg_price){ %>
+                                <div class="veg">
+                                    <div class="pr-head">
+                                        <img src="https://th.bing.com/th/id/OIP.ziAJTKtxn2RmrsjYIBylswHaHW?pid=ImgDet&rs=1"
+                                            alt="">
+                                        <div class="menu-price-title">Veg Price</div>
+                                    </div>
+                                    <div class="price">Rs. <%= space.veg_price %>/plate <span>+taxes</span> </div>
+                                </div>
+                                <div class="veg">
+                                    <div class="pr-head">
+                                        <img src="https://th.bing.com/th/id/OIP.n7lE6OLSf5Dj6BWEGeuRWAAAAA?pid=ImgDet&rs=1"
+                                            alt="">
+                                        <div class="menu-price-title">Non-Veg Price</div>
+                                    </div>
+                                    <div class="price">Rs. <%= space.non_veg_price %>/plate <span>+taxes</span></div>
+                                </div>
+                                <% }else if(space.veg_price) {%>
+                                    <div class="veg">
+                                        <div class="pr-head">
+                                            <img src="https://th.bing.com/th/id/OIP.ziAJTKtxn2RmrsjYIBylswHaHW?pid=ImgDet&rs=1"
+                                                alt="">
+                                            <div class="menu-price-title">Veg Price</div>
+                                        </div>
+                                        <div class="price">Rs. <%= space.veg_price %>/plate <span>+taxes</span> </div>
+                                    </div>
+                                    <% }else{ %>
+                                        <div class="veg">
+                                            <div class="pr-head">
+                                                <img src="https://th.bing.com/th/id/OIP.n7lE6OLSf5Dj6BWEGeuRWAAAAA?pid=ImgDet&rs=1"
+                                                    alt="">
+                                                <div class="menu-price-title">Non-Veg Price</div>
+                                            </div>
+                                            <div class="price">Rs. <%= space.non_veg_price %>/plate <span>+taxes</span>
+                                            </div>
+                                        </div>
+                                        <% } %>
+
+                        </div>
+                        <div class="cap">
+                            <div class="capacity">
+                                <div class="cap-title">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/615/615075.png" alt="">
+                                    <div class="capacity-title">Capacity</div>
+                                </div>
+                                <div class="cap-ans">
+                                    <%= space.capacity%> Guests
+                                </div>
+                            </div>
+                            <div class="capacity">
+                                <div class="cap-title">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" alt="">
+                                    <div class="capacity-title">No. of Rooms</div>
+                                </div>
+                                <div class="cap-ans">
+                                    <%= space.no_of_rooms %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submit-button">
+                        <a href="/venues/<%= space.id %>/getquote"><button class="submit" type="button" id="h">Request
+                                For Quote</button></a>
+                    </div>
+                </div>
+                <div class="box-type">
+                    <div class="box-head">
+                        <img src="https://cdn-icons-png.flaticon.com/512/159/159832.png" alt="">
+                        <div class="des-box-head">Contact</div>
+                    </div>
+                    <div class="box-body">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4213/4213204.png" alt="">
+                        <div class="phno">+91-<%= space.owner_number %>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-type">
+                    <div class="box-head">
+                        <img src="https://cdn-icons-png.flaticon.com/512/9716/9716833.png" alt="">
+                        <div class="des-box-head">Room Details</div>
+                    </div>
+                    <div class="box-body" id="room">
+                        <div class="room-det">
+                            <div class="con">
+                                <div class="ques">
+                                    No. of Rooms
+                                </div>
+                                <div class="ans">
+                                    <%= space.no_of_rooms %>
+                                </div>
+                            </div>
+                            <div class="con">
+                                <div class="ques">
+                                    Starting Price
+                                </div>
+                                <div class="ans">Rs. <%= space.room_price %> + taxes</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-type">
+                    <div class="box-head">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3957/3957938.png" alt="">
+                        <div class="des-box-head">Facilities Available</div>
+                    </div>
+                    <div class="box-body" id="cuis">
+                        <div class="contents">
+                            <% for(let i=0; i < space.facility_available.length; i++){ %>
+                                <img src="https://cdn-icons-png.flaticon.com/512/5299/5299035.png" alt="">
+                                <div class="con-des">
+                                    <%= space.facility_available[i] %>
+                                </div>
+                                <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include("partials/footer") -%>
+</body>
+<!-- Javascript -->
+<script type="text/javascript" src="/script/VenuePageScript.js"></script>
+<script type="text/javascript" src="/script/script.js"></script>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Friconix -->
+    <script defer src="https://friconix.com/cdn/friconix.js"></script>
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="/css/PaymentPageStyles.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <title>Responsive Regisration Form </title>
+
+    <link rel="icon" href="favicon.ico" />
+</head>
+
+<body>
+    <%- include("partials/header") -%>
+
+        <!-- Payment Section-->
+        <section id="payment">
+            <div class="container">
+
+                <div class="column-one">
+
+                    <h6 class="question">Why Promote on OccasionMate.com ?</h6>
+
+                    <div class="reason">
+                        <img src="/Images/payment-1.png" alt="">
+                        <h5>Lorem, ipsum.</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                    </div>
+
+                    <div class="reason">
+                        <img src="/Images/payment-2.png" alt="">
+                        <h5>Lorem, ipsum.</h5>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+
+                    <div class="reason">
+                        <img src="/Images/payment-3.png" alt="">
+                        <h5>Lorem, ipsum.</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                    </div>
+                </div>
+
+                <div class="column-two">
+                    <table class="details">
+                        <tr class="last">
+                            <th colspan="2">Review Your Details:</th>
+                        </tr>
+
+                        <tr>
+                            <td>Name:</td>
+                            <td>XYZ</td>
+                        </tr>
+
+                        <tr>
+                            <td>Amount:</td>
+                            <td><i class="fi-xnsuxm-rupee"></i> 24,000</td>
+                        </tr>
+
+                        <tr>
+                            <td>GST(18%):</td>
+                            <td><i class="fi-xnsuxm-rupee"></i> 5,400</td>
+                        </tr>
+
+                        <tr class="last">
+                            <td>Total Amount:</td>
+                            <td><i class="fi-xnsuxm-rupee"></i> 30,000</td>
+                        </tr>
+                    </table>
+
+                    <table class="payment-method">
+                        <tr class="last">
+                            <th>Select Your Payment Method:</th>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <input type="radio" name="payment-method" id="payment-method">
+                                <label for="payment-method">Net Banking/Credit/Debit Card</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>NOTE: After clicking the "Sure, Get me Started" button below, you will be redirected to
+                                the
+                                secure
+                                page of our online payment service partner.</td>
+                        </tr>
+                    </table>
+
+                    <div class="buttons">
+                        <button class="sumbit" type="button">Sure, Get me Started</button>
+                    </div>
+
+                    <div class="payment-options">
+                        <p>Important Note:* Your order is incomplete unless you click on the "Sure, Get me Started"
+                            button
+                            above.</p>
+                        <h2>PAYMENT OPTIONS</h2>
+                        <img src="/Images/flp-visa.png" alt="">
+                        <img src="/Images/flp-master-card.png" alt="">
+                        <img src="/Images/flp-maestro.png" alt="">
+                        <img src="/Images/flp-american.png" alt="">
+                        <img src="/Images/flp-net-banking.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <%- include("partials/footer") -%>
+
+            <!-- Bootstrap Scripts -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+                crossorigin="anonymous"></script>
+
+            <!-- jQuery Scripts -->
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+                integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+            <!-- Javascript -->
+            <script type="text/javascript" src="/script/PaymentPageScript.js"></script>
+            <script type="text/javascript" src="/script/script.js"></script>
+</body>
+
+</html>

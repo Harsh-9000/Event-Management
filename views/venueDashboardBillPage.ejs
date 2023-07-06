@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/VendorDashboardBillPageStyles.css">
+    <link rel="stylesheet" href="/css/dashboardStyles.css">
+    <script src="https://kit.fontawesome.com/e60263fb6b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <%- include("partials/venueDashboardSidebar") -%>
+
+        <div class="container">
+            <%- include("partials/dashboardHeader") -%>
+
+                <div class="content">
+                    <div class="content2">
+                        <div class="recentevents invoice-box">
+                            <div class="title">
+                                <h2>Bill</h2>
+                            </div>
+                            <form action="/venue-dashboard/<%= venue._id %>/customers/<%= event._id %>/accept"
+                                method="post">
+                                <table class="invoice-table">
+                                    <tr class="top">
+                                        <td colspan="2">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <h4>
+                                                            <%= venue.venue_name %>
+                                                        </h4>
+                                                    </td>
+                                                    <td>
+                                                        Invoice <br>
+                                                        Created: <%= currentDate %> <br>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="information">
+                                        <td colspan="2">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        Venue Address: <%= venue.venue_address %> <br>
+                                                            Venue Number: <%= venue.owner_number %>
+                                                    </td>
+
+                                                    <td>
+                                                        Customer Name: <%= event.customerName %> <br>
+                                                            Customer Email: <%= event.customerEmail %> <br>
+                                                                Customer Phone Number: <%= event.customerNumber %>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="heading">
+                                        <td>Details</td>
+                                        <td></td>
+                                    </tr>
+
+                                    <tr class="item">
+                                        <td>Space Booked:</td>
+                                        <td>
+                                            <%= event.space %>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="item">
+                                        <td>Package (If any):</td>
+                                        <td><input name="package" id="package" type="text" value=""></td>
+                                    </tr>
+
+                                    <tr class="item">
+                                        <td>Amount:</td>
+                                        <td><i class="fa-solid fa-indian-rupee-sign"></i> <input name="price" id="price"
+                                                type="text" value="0" oninput="calculate()">
+                                        </td>
+                                    </tr>
+
+                                    <tr class="item">
+                                        <td>GST(18%):</td>
+                                        <td><i class="fa-solid fa-indian-rupee-sign"></i> <input id="gst" type="text"
+                                                readonly value="0"></td>
+                                    </tr>
+
+                                    <tr class="item">
+                                        <td>Total Amount::</td>
+                                        <td><i class="fa-solid fa-indian-rupee-sign"></i> <input id="total-price"
+                                                type="text" readonly value="0"></td>
+                                    </tr>
+                                </table>
+
+                                <button type="submit" class="btn">Send Bill</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <script src="/script/VendorDashboardBillPageScript.js"></script>
+</body>
+
+</html>

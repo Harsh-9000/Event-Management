@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.img {
+    width: 100%;
+    height: 100vh;
+    /* background-image: linear-gradient(rgba(214, 245, 241, 0.8), rgba(0, 0, 0, 0.8)), url(background1.jpg); */
+    /* background-image: url(./img/user.jpg); */
+    /* filter: blur(8px); */
+    /* yeh shadow type ka dene k liye sahi h */
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+/* .img::before {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    background-position: center;
+    background-size: cover;
+    /* position: relative; */
+    /* width: 100%;
+    height: 100vh;
+    background-image: url('./img/user.jpg');
+    filter: opacity(10%);
+    filter: brightness(5%);
+    filter: contrast(2);
+    filter: grayscale(20%);
+    filter: blur(0.7px);
+  }  */
+
+  .logo_occasion{
+    max-width: 400px;
+    width: 100%;
+    filter: brightness(0%);
+    margin-bottom: 1em;
+  }
+
+.logbox {
+    width: 90%;
+    max-width: 411px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* logbox center m aaja raha h isse */
+    background: #fff;
+    /* border: 2px solid black; */
+    padding: 54px 67px 70px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 10px 10px 10px 18px  rgba(0, 0, 0, 0.3);
+}
+
+.logbox h1 {
+    /* sign up heading k liye h */
+    font-size: 30px;
+    margin-bottom: 27px;
+    color: #7a00ff;
+    position: relative;
+}
+
+.inputfield {
+    background: #ffffff;
+    border: 2px solid black;
+    border-radius:10px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    max-height: 63px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+    /* overflow clip type ka krdega jese if you want scroll bar ya hide krdena h agar tum dimension m 
+    kuch change krte ho */
+}
+
+input {
+    width: 100%;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    padding: 19px 15px;
+}
+
+.inputfield i {
+    margin-left: 15px;
+    color: #0000009e;
+}
+
+.inputgroup p {
+    text-align: left;
+    font-size: 10px;
+
+}
+
+form p a {
+    text-decoration: none;
+    color: #7a00ff;
+}
+
+.btnbx {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* this equal space m baat dega  */
+    margin-top: 9px;
+}
+
+.btnbx a {
+    width: 100%;
+    display: flex;
+}
+
+.btnbx button {
+    flex-basis: 96%;
+    /* initial length batata h flexible element ki */
+    background: rgb(0, 0, 0);
+    height: 31px;
+    border-radius: 37px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    margin: 4px;
+}
+
+.inputgroup {
+    height: 244px;
+}
+
+
+
+
+
+.btnbx button {
+    background: #000000;
+    color: #eaeaea;
+}
+
+.btnbx button.dis {
+    background: #eaeaea;
+    color: #555;
+}
+
+
+
+.getStarted{
+    margin: auto;
+    margin-top: 1.25rem;
+    
+}
+
+.getStarted button{
+    padding: 14px 5.5rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: white;
+    color: #ffffff;
+    background-color: black;
+}
+
+.getStarted button:hover{
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+/* responsive */
+@media (max-width:311px) {
+    .logbox {
+        padding: 33px 17px 48px;
+    }
+
+    .logbox h1 {
+        font-size: 125%;
+    }
+}

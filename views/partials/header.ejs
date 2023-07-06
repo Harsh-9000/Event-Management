@@ -1,0 +1,221 @@
+<!-- Nav Bar -->
+<header class="header">
+    <div class="header-container">
+        <div class="header-row v-center">
+            <div class="header-item item-left">
+                <div class="logo">
+                    <a href="/"><img src="/Images/Logo.png" alt="Logo"></a>
+                </div>
+            </div>
+            <div class="header-item item-center">
+                <div class="menu-overlay"></div>
+                <nav class="menu">
+                    <div class="mobile-menu-head">
+                        <div class="go-back"><i class="fi-xnslxl-chevron-solid"></i></div>
+                        <div class="current-menu-title"></div>
+                        <div class="mobile-menu-close">&times;</div>
+                    </div>
+                    <ul class="menu-main">
+                        <li class="menu-item-with-children">
+                            <a href="/venues" class="main-items">Venues <i class="fi-xwsdxl-chevron-wide"></i></a>
+                        </li>
+
+                        <li class="menu-item-with-children">
+                            <a href="/vendors" class="main-items">Vendors <i class="fi-xwsdxl-chevron-wide"></i></a>
+                            <div class="sub-menu mega-menu mega-menu-column-3">
+                                <div class="list-item">
+                                    <a href="/vendors/photographers/list">
+                                        <h4 class="title">Photographers</h4>
+                                    </a>
+                                    <a href="/vendors/bands/list">
+                                        <h4 class="title">Bands</h4>
+                                    </a>
+                                    <a href="/vendors/bridal-wear/list">
+                                        <h4 class="title">Bridal Wear</h4>
+                                    </a>
+                                    <a href="/vendors/cakes/list">
+                                        <h4 class="title">Cakes</h4>
+                                    </a>
+                                    <a href="/vendors/caterers/list">
+                                        <h4 class="title">Caterers</h4>
+                                    </a>
+                                    <a href="/vendors/choreographers/list">
+                                        <h4 class="title">Choreographers</h4>
+                                    </a>
+                                    <a href="/vendors/decorators/list">
+                                        <h4 class="title">Decorators</h4>
+                                    </a>
+                                    <a href="/vendors/dj/list">
+                                        <h4 class="title">DJ</h4>
+                                    </a>
+                                    <a href="/vendors/entertainers/list">
+                                        <h4 class="title">Entertainers</h4>
+                                    </a>
+                                </div>
+
+                                <div class="list-item">
+                                    <a href="/vendors/tent-houses/list">
+                                        <h4 class="title">Tent Houses</h4>
+                                    </a>
+                                    <a href="/vendors/florists/list">
+                                        <h4 class="title">Florists</h4>
+                                    </a>
+                                    <a href="/vendors/groom-wear/list">
+                                        <h4 class="title">Groom Wear</h4>
+                                    </a>
+                                    <a href="/vendors/jewellers/list">
+                                        <h4 class="title">Jewellers</h4>
+                                    </a>
+                                    <a href="/vendors/magician/list">
+                                        <h4 class="title">Magician</h4>
+                                    </a>
+                                    <a href="/vendors/makeup-artists/list">
+                                        <h4 class="title">Makeup Artists</h4>
+                                    </a>
+                                    <a href="/vendors/mehndi-artists/list">
+                                        <h4 class="title">Mehndi Artists</h4>
+                                    </a>
+                                    <a href="/vendors/gifts/list">
+                                        <h4 class="title">Gifts</h4>
+                                    </a>
+                                    <a href="/vendors/invitations/list">
+                                        <h4 class="title">Invitations</h4>
+                                    </a>
+                                </div>
+
+                                <div class="list-item">
+                                    <img src="/Images/Vendors.jpeg" alt="Vendors">
+                                </div>
+                        </li>
+                        <li>
+                            <a href="/blogs" class="main-items">Blog</a>
+                        </li>
+
+                        <li class="buttons">
+                            <a href="/register-interest" class="button"><span></span>LIST YOUR BUSINESS</a>
+
+                            <% if (currentUser && currentUser.isVenue) { %>
+                                <div class="action" id="profile">
+                                    <div class="profile" onclick="profileToggle();">
+                                        <button class="button"><span></span><i
+                                                class="fi-xnsuxl-user-solid show"></i></button>
+                                    </div>
+                                    <div class="profile-menu">
+                                        <h3>
+                                            <%= currentUser.owner_name %><br><span>Venue</span>
+                                        </h3>
+                                        <ul>
+                                            <li><img src="/Images/user.png" alt="Logo"><a
+                                                    href="/venue-dashboard/<%= UserID %>/settings">My Profile</a></li>
+                                            <li><img src="/Images/edit.png" alt="Logo"><a
+                                                    href="/venue-dashboard/<%= UserID %>/settings/edit">Edit
+                                                    Profile</a>
+                                            </li>
+                                            <li><img src="/Images/envelope.png" alt="Logo"><a
+                                                    href="/venue-dashboard/<%= UserID %>">Dashboard</a></li>
+                                            <li><img src="/Images/question.png" alt="Logo"><a
+                                                    href="/venue-dashboard/<%= UserID %>/help">Help</a></li>
+                                            <li><img src="/Images/home.png" alt="Logo"><a href="/">Home</a></li>
+                                            <li><img src="/Images/log-out.png" alt="Logo"><a href="/logout">Logout</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <% } else if (currentUser && currentUser.isVendor) { %>
+                                    <div class="action" id="profile">
+                                        <div class="profile" onclick="profileToggle();">
+                                            <button class="button"><span></span><i
+                                                    class="fi-xnsuxl-user-solid show"></i></button>
+                                        </div>
+                                        <div class="profile-menu">
+                                            <h3>
+                                                <%= currentUser.ownerName %><br><span>Vendor</span>
+                                            </h3>
+                                            <ul>
+                                                <li><img src="/Images/user.png" alt="Logo"><a
+                                                        href="/vendor-dashboard/<%= UserID %>/settings">My Profile</a>
+                                                </li>
+                                                <li><img src="/Images/edit.png" alt="Logo"><a
+                                                        href="/vendor-dashboard/<%= UserID %>/settings/edit">Edit
+                                                        Profile</a>
+                                                </li>
+                                                <li><img src="/Images/envelope.png" alt="Logo"><a
+                                                        href="/vendor-dashboard/<%= UserID %>">Dashboard</a></li>
+                                                <li><img src="/Images/question.png" alt="Logo"><a
+                                                        href="/vendor-dashboard/<%= UserID %>/help">Help</a></li>
+                                                <li><img src="/Images/home.png" alt="Logo"><a href="/">Home</a></li>
+                                                <li><img src="/Images/log-out.png" alt="Logo"><a
+                                                        href="/logout">Logout</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <% } else if (currentUser && !currentUser.isVendor && !currentUser.isVenue &&
+                                        currentUser.isAdmin) { %>
+                                        <div class="action" id="profile">
+                                            <div class="profile" onclick="profileToggle();">
+                                                <button class="button"><span></span><i
+                                                        class="fi-xnsuxl-user-solid show"></i></button>
+                                            </div>
+                                            <div class="profile-menu">
+                                                <h3>
+                                                    <%= currentUser.name %><br><span>Admin</span>
+                                                </h3>
+                                                <ul>
+                                                    <li><img src="/Images/envelope.png" alt="Logo"><a
+                                                            href="/admin-dashboard/<%= UserID %>">Dashboard</a></li>
+                                                    <li><img src="/Images/home.png" alt="Logo"><a href="/">Home</a></li>
+                                                    <li><img src="/Images/log-out.png" alt="Logo"><a
+                                                            href="/logout">Logout</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <% } else if (currentUser && !currentUser.isVendor && !currentUser.isVenue &&
+                                            !currentUser.isAdmin) { %>
+                                            <div class="action" id="profile">
+                                                <div class="profile" onclick="profileToggle();">
+                                                    <button class="button"><span></span><i
+                                                            class="fi-xnsuxl-user-solid show"></i></button>
+                                                </div>
+                                                <div class="profile-menu">
+                                                    <h3>
+                                                        <%= currentUser.name %><br><span>User</span>
+                                                    </h3>
+                                                    <ul>
+                                                        <li><img src="/Images/user.png" alt="Logo"><a
+                                                                href="/user-dashboard/<%= UserID %>/settings">My
+                                                                Profile</a>
+                                                        </li>
+                                                        <li><img src="/Images/edit.png" alt="Logo"><a
+                                                                href="/user-dashboard/<%= UserID %>/settings/edit">Edit
+                                                                Profile</a></li>
+                                                        <li><img src="/Images/envelope.png" alt="Logo"><a
+                                                                href="/user-dashboard/<%= UserID %>">Dashboard</a></li>
+                                                        <li>
+                                                            <img src="/Images/question.png" alt="Logo">
+                                                            <a href="/user-dashboard/<%= UserID %>/help">Help</a>
+                                                        </li>
+                                                        <li><img src="/Images/home.png" alt="Logo"><a href="/">Home</a>
+                                                        </li>
+                                                        <li><img src="/Images/log-out.png" alt="Logo"><a
+                                                                href="/logout">Logout</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <% } else { %>
+                                                <a href="/login" class="button" id="login-button"><span></span><i
+                                                        class="fi-xnsuxl-user-solid show"></i></a>
+                                                <% } %>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="mobile-menu-trigger">
+                <span></span>
+            </div>
+        </div>
+    </div>
+</header>

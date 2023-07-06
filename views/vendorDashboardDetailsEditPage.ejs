@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/VendorDashboardDetailsEditPageStyles.css">
+    <link rel="stylesheet" href="/css/dashboardStyles.css">
+    <script src="https://kit.fontawesome.com/e60263fb6b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <%- include("partials/vendorDashboardSidebar") -%>
+
+        <div class="container">
+            <%- include("partials/dashboardHeader") -%>
+
+                <div class="content">
+                    <div class="profile">
+                        <div class="new">
+                            <i class="fa-solid fa-user"></i>&nbsp;&nbsp; <h2>Edit Details</h2>
+                        </div>
+
+                        <form action="/vendor-dashboard/<%= VendorID %>/details/edit" method="post">
+                            <div class="info">
+                                <div class="column-1">
+                                    <h3>Business Name</h3>
+                                    <input name="title" type="text" class="input" value="<%= vendor.title %>">
+
+                                    <h3>Business Address</h3>
+                                    <input name="address" type="text" class="input"
+                                        value="<%= vendor.address %>">
+
+                                    <h3>About</h3>
+                                    <textarea name="about" id="" class="" cols="50"
+                                        rows="7"><%= vendor.about %></textarea>
+
+                                    <h3>Price(s)</h3>
+                                    <input type="text" name="price" class="input" value="<%= vendor.price %>">
+
+                                    <h3>Information About Package(s)</h3>
+                                    <textarea name="packagesInfo" id="" class="" cols="50"
+                                        rows="7"><%= vendor.packagesInfo %></textarea>
+
+                                    <h3>Cancellation Policy</h3>
+                                    <input type="text" name="cancellationPolicy" class="input"
+                                        value="<%= vendor.cancellationPolicy %>">
+                                </div>
+
+                                <div class="column-2">
+                                    <h3>Images(5 Images)</h3>
+                                    <textarea name="images" id="" class="" cols="50"
+                                        rows="7"><%= vendor.images %></textarea>
+
+                                    <h3>Service City</h3>
+                                    <input type="text" name="city" class="input" value="<%= vendor.city %>">
+
+                                    <h3>Service Type</h3>
+                                    <input type="text" name="service" class="input" value="<%= vendor.service %>">
+
+                                    <h3>Service(s) Offered</h3>
+                                    <textarea name="services" id="" class="" cols="50"
+                                        rows="7"><%= vendor.services %></textarea>
+
+                                    <h3>Package(s)</h3>
+                                    <textarea name="packages" id="" class="" cols="50"
+                                        rows="7"><%= vendor.packages %></textarea>
+
+                                    <h3>Booking Policy</h3>
+                                    <input type="text" name="bookingPolicy" class="input" value="<%= vendor.bookingPolicy %>">
+                                </div>
+                            </div>
+
+                            <button class="btn" type="submit">Save Changes</button>
+                        </form>
+
+                    </div>
+                </div>
+        </div>
+</body>
+
+</html>

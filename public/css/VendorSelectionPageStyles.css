@@ -1,0 +1,151 @@
+body {
+    background: #eee9da;
+}
+
+/* Search Section */
+#header {
+    margin: 0;
+    padding: 0;
+}
+
+.vendor-selection-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://mfd-media-offload.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2021/07/04171429/LukeMiddlemiss_CG-F-378.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top;
+}
+
+.vendor-selection-title {
+    color: #fff;
+    text-align: center;
+    filter: brightness(100%);
+    font-size: 50px;
+    font-weight: 600;
+    padding: 140px 0 140px 0;
+}
+
+#vendors {
+    padding-top: 3rem;
+    text-align: center;
+}
+
+#vendors h3 {
+    padding: 0.5rem 5rem 0rem 5rem;
+}
+
+#vendors h3:after {
+    content: "";
+    margin-top: 10px;
+    margin-left: 580px;
+    width: 8%;
+    height: 3px;
+    display: block;
+    background-color: #6096b4;
+}
+
+.img-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+.wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-auto-rows: 280px;
+    grid-auto-flow: dense;
+    gap: 25px;
+    width: 100%;
+}
+
+.cards a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.cards .card-image {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.9s;
+    filter: brightness(50%);
+}
+
+.cards a:hover .card-image {
+    transform: scale(1.3);
+}
+
+.cards .card-text {
+    max-width: 800px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #eee9da;
+}
+
+@media (max-width:768px) {
+
+    .img-area {
+        padding: 0;
+    }
+
+    .wrapper {
+        max-width: 100%;
+        padding: 0;
+    }
+
+}
+
+/* List With Us */
+#list-with-us {
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background: #93bfcf;
+}
+
+#list-with-us h1 {
+    padding-bottom: 10px;
+}
+
+#list-with-us h5 {
+    padding-bottom: 40px;
+}
+
+.get-started-btn {
+    text-align: center;
+    max-width: 250px;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 2px solid #24262b;
+    color: #24262b;
+    padding: 10px 10px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 0.3s linear;
+    text-decoration: none;
+}
+
+.get-started-btn:hover {
+    border: 2px solid #eee9da;
+    background-color: #eee9da;
+    color: #6096b4;
+}

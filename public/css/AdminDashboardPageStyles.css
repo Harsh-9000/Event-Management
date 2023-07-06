@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #eee9da;
+}
+
+a {
+    text-decoration: none;
+    color: #444;
+}
+
+li {
+    list-style: none;
+}
+
+h1,
+h2 {
+    color: #444;
+}
+
+h3 {
+    color: #6e6c6c;
+}
+
+.btn {
+    background: #93bfcf;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    border: 2px solid #93bfcf;
+
+
+}
+
+.btn:hover {
+    color: #93bfcf;
+    background: white;
+    border: 2px solid gray;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 10px;
+    border-bottom: 2px solid #999;
+}
+
+table {
+    padding: 10px;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 8px;
+}
+
+.container {
+    position: absolute;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+    background: #eee9da;
+}
+
+.container .content {
+    position: relative;
+    margin-top: 8vh;
+    min-height: 90vh;
+
+}
+
+.container .content .cards {
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.container .content .cards .card {
+    width: 250px;
+    height: 150px;
+    background: #93bfcf;
+    margin: 20px 10px;
+    border: 1px solid black;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.card:hover {
+    scale: 1.1;
+    box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.container .content .content2 {
+    min-height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.container .content .content2 .recentevents {
+    width: 90%;
+    flex: 5;
+    background: white;
+    margin: 0 25px 25px 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+
+}
+
+@media(max-width:815px) {
+    .container .content .content2 .recentevents {
+        display: flex;
+        flex-direction: row;
+        min-height: auto;
+        width: auto;
+    }
+}
+
+.container .content .content2 .newevents {
+    flex: 2;
+    background: white;
+    width: 90%;
+    margin: 0 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+@media(max-width:815px) {
+    .container .content .content2 .newevents {
+        display: flex;
+        flex-direction: row;
+        min-height: auto;
+        width: auto;
+    }
+}

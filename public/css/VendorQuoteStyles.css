@@ -1,0 +1,203 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+/* Header */
+#header {
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #93bfcf;
+    padding-top: 30px;
+}
+
+.register-header {
+    position: relative;
+    text-align: center;
+}
+
+.register-header img {
+    max-width: 900px;
+    width: 100%;
+    border-radius: 6px;
+    filter: brightness(50%);
+}
+
+.text {
+    max-width: 800px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #eee9da;
+}
+
+/* Registeration Section */
+#register {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #93bfcf;
+}
+
+.container {
+    position: relative;
+    max-width: 1100px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    margin: 0 15px;
+    background-color: #eee9da;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container header {
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+}
+
+.container header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+    width: 27px;
+    border-radius: 8px;
+    background-color: #93bfcf;
+}
+
+.container form {
+    position: relative;
+    margin-top: 16px;
+    min-height: 590px;
+    background-color: #eee9da;
+    overflow: hidden;
+}
+
+.container form .form {
+    position: absolute;
+    background-color: #eee9da;
+}
+
+.container form .fields {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+form .fields .input-field {
+    display: flex;
+    width: calc(100% / 2 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.input-field label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #000;
+}
+
+.input-field input,
+textarea,
+select {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+    background: #eee9da;
+}
+
+.input-field input.invalid,
+textarea.invalid,
+select.invalid {
+    border: 1px solid red;
+}
+
+.error-hint {
+    color: red;
+    font-size: 12px;
+}
+
+.hidden {
+    display: none;
+}
+
+.input-field input :focus,
+.input-field select:focus,
+.input-field textarea:focus {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+}
+
+.input-field select,
+.input-field textarea,
+.input-field input[type="date"] {
+    color: #000;
+}
+
+.input-field input[type="date"]:valid {
+    color: #000;
+}
+
+form .buttons {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.buttons button {
+    margin-right: 10px;
+    position: relative;
+    padding: 10px 18px;
+    border: 2px solid #6096b4;
+    display: inline-block;
+    text-decoration: none;
+    color: #6096b4;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    overflow: hidden;
+    background: #eee9da;
+}
+
+.buttons button:hover {
+    color: #eee9da;
+    background: #6096b4;
+}
+
+@media (max-width: 750px) {
+    .container form {
+        overflow-y: scroll;
+    }
+
+    .container form::-webkit-scrollbar {
+        display: none;
+    }
+
+    form .fields .input-field {
+        width: calc(100% / 2 - 15px);
+    }
+}
+
+@media (max-width: 550px) {
+    form .fields .input-field {
+        max-width: 200px;
+        width: 100%;
+    }
+}

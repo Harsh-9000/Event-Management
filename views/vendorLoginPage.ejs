@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/LoginPageStyles.css">
+    <title>Vendorlogin</title>
+    <script src="https://kit.fontawesome.com/e60263fb6b.js" crossorigin="anonymous"></script>
+
+    <style>
+        .img::before {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* position: relative; */
+    width: 100%;
+    height: 100vh;
+    background-image: url('/Images/4.jpg');
+    filter: opacity(10%);
+    filter: brightness(5%);
+    filter: contrast(2);
+    filter: grayscale(20%);
+    filter: blur(0.7px);
+  }
+    </style>
+</head>
+
+<body>
+    <div class="img">
+        <div class="logbox" style="box-shadow: 10px 10px 10px 2px  rgba(0, 0, 0, 0.3);">
+            <img  class="logo_occasion" src="/Images/Logo.png" alt="">
+            <h2 id="text" style="color: black;">Vendor Login</h2>
+
+            <form action="/vendors/login" name="form1" onsubmit="return validateform()" method="post">
+                <div class="inputgroup">
+                    <div class="inputfield">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="Email" name="email">
+                    </div>
+                    <div class="inputfield">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <input type="password" placeholder="Password" name="password">
+                    </div>
+                    <a  href="/user/forgot">Forgot Password?</a>
+                    <div class="getStarted">
+                        <button type="submit" >Login</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <script>
+
+        function validateform() {
+
+            let email = document.form1.email.value;
+            let password = document.form1.password.value;
+
+
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+                if (password.length < 8) {
+                    alert("Password must be at least 8 characters long.");
+                    return false;
+                }
+                return true;
+            }
+            else {
+                alert("You have entered an invalid email address!")
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/UserDashboardEditSettingsStyles.css">
+  <link rel="stylesheet" href="/css/dashboardStyles.css">
+  <script src="https://kit.fontawesome.com/e60263fb6b.js" crossorigin="anonymous"></script>
+
+  <style>
+    .help-form {
+      background-color: aliceblue;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      padding: 33px;
+      margin-bottom: 50px;
+    }
+
+    .help-form label {
+      display: block;
+      font-family: 'Signika Negative', sans-serif;
+      font-size: 20px;
+    }
+
+    .help-form input[type="email"],
+    .help-form textarea {
+      width: 100%;
+      padding: 10px 17px;
+      margin-bottom: 40px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 16px;
+      margin-top: 1%;
+    }
+
+    .help-form textarea {
+      margin-top: 8px;
+      height: 240px;
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .help-form input[type="submit"] {
+      background-color: #93bfcf;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 3px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .help-form input[type="submit"]:hover {
+      background-color: #6096b4;
+    }
+
+    .helpbox {
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      margin-top: 10%;
+      width: 60%;
+    }
+
+    .helpheading {
+      font-weight: bold;
+      font-size: 25px;
+      margin-bottom: 3%;
+      font-family: 'Ubuntu', sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <%- include("partials/userDashboardSidebar") -%>
+
+    <div class="container">
+      <%- include("partials/dashboardHeader") -%>
+
+        <div class="helpbox">
+          <div class="helpheading">Help and Support</div>
+          <form class="help-form" method="post" action="/user-dashboard/<%= UserID %>/help">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/UserDashboardBillPageStyles.css">
+    <link rel="stylesheet" href="/css/dashboardStyles.css">
+    <script src="https://kit.fontawesome.com/e60263fb6b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <%- include("partials/venueDashboardSidebar") -%>
+
+        <div class="container">
+            <%- include("partials/dashboardHeader") -%>
+
+                <div class="content">
+                    <div class="content2">
+                        <div class="recentevents invoice-box">
+                            <div class="title">
+                                <h2>Bill</h2>
+                            </div>
+                            <table class="invoice-table">
+                                <tr class="top">
+                                    <td colspan="2">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <h4>
+                                                        <%= venue.venue_name %>
+                                                    </h4>
+                                                </td>
+                                                <td>
+                                                    Invoice <br>
+                                                    Created: <%= event.billDate %> <br>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <tr class="information">
+                                    <td colspan="2">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    Venue Address: <%= venue.venue_address %> <br>
+                                                        Venue Number: <%= venue.owner_number %>
+                                                </td>
+
+                                                <td>
+                                                    Customer Name: <%= user.customerName %> <br>
+                                                        Customer Email: <%= user.customerEmail %> <br>
+                                                            Customer Phone Number: <%= user.customerNumber %>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <tr class="heading">
+                                    <td>Details</td>
+                                    <td></td>
+                                </tr>
+
+                                <tr class="item">
+                                    <td>Space Booked:</td>
+                                    <td>
+                                        <%= event.venueSpace %>
+                                    </td>
+                                </tr>
+
+                                <tr class="item">
+                                    <td>Package (If any):</td>
+                                    <td><input id="package" readonly type="text" value="<%= event.packageTaken %>"></td>
+                                </tr>
+
+                                <tr class="item">
+                                    <td>Amount:</td>
+                                    <td><i class="fa-solid fa-indian-rupee-sign"></i> <input id="user-price" readonly
+                                            type="text" value="<%= event.price %>"></td>
+                                </tr>
+
+                                <tr class="item">
+                                    <td>GST(18%):</td>
+                                    <td><i class="fa-solid fa-indian-rupee-sign"></i> <input id="user-gst" readonly
+                                            type="text" readonly value="0"></td>
+                                </tr>
+
+                                <tr class="item">
+                                    <td>Total Amount::</td>
+                                    <td><i class="fa-solid fa-indian-rupee-sign"></i> <input id="user-total-price"
+                                            readonly type="text" readonly value="0"></td>
+                                </tr>
+                            </table>
+
+                            <a
+                                href="/user-dashboard/<%= event.userID %>/vendor-enquiries/<%= event._id %>/payment-confirm"><button
+                                    class="btn">Pay</button></a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <script src="/script/UserDashboardBillPageScript.js"></script>
+</body>
+
+</html>

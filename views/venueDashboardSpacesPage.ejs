@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/VenueDashboardSpacesPageStyles.css">
+  <link rel="stylesheet" href="/css/dashboardStyles.css">
+  <script src="https://kit.fontawesome.com/e60263fb6b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div class="main">
+    <%- include("partials/venueDashboardSidebar") -%>
+
+      <div class="container">
+        <%- include("partials/dashboardHeader") -%>
+
+          <!-- Content Section -->
+          <section>
+            <div class="all-card-container">
+              <main class="grid">
+                <!-- card-1 -->
+                <% if (spaces.length> 0) { %>
+                  <% for (let space of spaces) { %>
+                    <article class="card-1 card">
+
+                      <img src="<%= space.images[0] %>" alt="">
+                      <div class="text">
+                        <h3 class="card_title">
+                          <%= space.space_type %>
+                        </h3>
+
+                        <div class="buttons-edit-del">
+                          <div class="button-container ">
+                            <a href="/venue-dashboard/<%= VenueID %>/spaces/<%= space.id %>/edit" class="here-how">
+                              <button class="btn-card edit-button">Edit</button></a>
+                          </div>
+                          <div class="button-container here-how ">
+                            <a href="/venue-dashboard/<%= VenueID %>/spaces/<%= space.id %>/delete" class="here-how">
+                              <button class="btn-card delete-button">Delete</button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                    <% }} %>
+
+                      <!--plus- Add Button-->
+                      <article class=" card">
+                        <a href="/venue-dashboard/<%= VenueID %>/spaces/add">
+                          <div class="centering">
+                            <div class="icon-plus button">&plus;</div>
+                          </div>
+                        </a>
+                      </article>
+
+              </main>
+            </div>
+          </section>
+
+      </div>
+
+  </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Blogs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css\BlogPageStyles.css">
+    <link rel="stylesheet" href="css\styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <!-- Friconix -->
+    <script defer src="https://friconix.com/cdn/friconix.js"></script>
+</head>
+
+<body>
+
+    <div class="background">
+
+
+        <%- include("partials/blogheader") -%>
+
+            <div class="cont1">
+                <% blogs.forEach(function(blog){ %>
+                    <a href="/blogs/<%= blog._id %>" class="bloglinks">
+                        <div class="blogs">
+                            <div class="imageHolder">
+                                <img src="<%= blog.imageLink  %>" class="pic">
+                            </div>
+                            <div class="p">
+                                <div class="p1">
+                                    <%= blog.title %>
+                                </div>
+                                <%= blog.content %>
+                            </div>
+                        </div>
+                    </a>
+                    <% }) %>
+
+            </div>
+
+            <div class="cont2">
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <div class="imageHolder2">
+                            <div class="inner">
+                                <div class="text">Best Locations for rooftop restaurants to eat with your<br> friends
+                                    and family
+                                </div>
+                                <img src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/09/07081644/Untitled-design-13-1600x900.jpg"
+                                    class="img_slide">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="imageHolder2">
+                            <div class="inner">
+                                <div class="text">Make your corporate event a success</div>
+                                <img src="https://craftworldevents.com/wp-content/uploads/2022/10/Corporate-Events.jpg"
+                                    class="img_slide">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="imageHolder2">
+                            <div class="inner">
+                                <div class="text">Guide to make your diwali memorable</div>
+                                <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202210/anirudh-ib3d1ux1llc-unsplash-sixteen_nine.jpg?VersionId=GEPaH83VLAAOE66QE0dwosAw.Lh5kOZw&size=690:388"
+                                    class="img_slide">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sideform">
+                    <p class="insidecontform">
+                        Looking for a venue / event planner? Contact us..
+                    </p>
+                    <form class="formfill" method="post" action="/blogs" onsubmit="return validation()">
+                        <input type="text" class="boxfill" id="fname" name="firstname" placeholder="Your name.."><br>
+                        <input type="text" class="boxfill" id="email" name="lastname" placeholder="Your E-Mail.."><br>
+                        <input type="text" class="boxfill" id="usernum" name="lastname"
+                            placeholder="Contact Number.."><br>
+                        <input type="submit" id="submitbtn" value="Call me Back">
+                    </form>
+                </div>
+            </div>
+            <br>
+            <div class="plannerheading">Event planning services for you</div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-image"></div>
+                    <div class="card-title">Anniversary Planning</div>
+                    <div class="card-text">
+                        Surprise your lover with a memorable experience
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"><img src=""></div>
+                    <div class="card-title">Wedding Venues</div>
+                    <div class="card-text">
+                        Get Best Wedding Venues in Your Budget
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"><img src=""></div>
+                    <div class="card-title">Birthday party venues</div>
+                    <div class="card-text">
+                        Book Best b'day party Venues in Your Budget
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"></div>
+                    <div class="card-title">Event Vendors</div>
+                    <div class="card-text">
+                        Get Best Event Vendors in Your Budget
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image"></div>
+                    <div class="card-title">Event planning</div>
+                    <div class="card-text">
+                        Get Best Event Planning you want
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <%- include("partials/footer") -%>
+    </div>
+    <script type="text/javascript" src="script\BlogPageScript.js"></script>
+</body>
+
+</html>

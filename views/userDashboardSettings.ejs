@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/UserDashboardSettingsStyles.css">
+    <link rel="stylesheet" href="/css/dashboardStyles.css">
+    <script src="https://kit.fontawesome.com/e60263fb6b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <%- include("partials/userDashboardSidebar") -%>
+
+        <div class="container">
+            <%- include("partials/dashboardHeader") -%>
+
+                <div class="content">
+                    <div class="profile">
+                        <div class="new">
+                            <i class="fa-solid fa-user"></i>&nbsp;&nbsp; <h2>My Profile</h2>
+
+                        </div>
+                        <div class="info">
+                            <h3>
+                                Full Name
+                            </h3>
+                            <input readonly type="text" class="input" value="<%= User.name %>">
+                            <h3>Phone Number</h3>
+                            <input readonly type="text" class="input" value="<%= User.number %>">
+                            <h3>Email</h3>
+                            <input readonly type="email" class="input" value="<%= User.email %>">
+                            <a href="/user-dashboard/<%= UserID %>/settings/edit"><button class="btn">Edit</button></a>
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+</body>
+
+</html>

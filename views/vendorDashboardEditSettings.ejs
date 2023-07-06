@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/VendorDashboardEditSettingsStyles.css">
+    <link rel="stylesheet" href="/css/dashboardStyles.css">
+    <script src="https://kit.fontawesome.com/e60263fb6b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <%- include("partials/vendorDashboardSidebar") -%>
+
+        <div class="container">
+            <%- include("partials/dashboardHeader") -%>
+
+                <div class="content">
+                    <form action="/vendor-dashboard/<%= VendorID %>/settings/edit" method="post">
+                        <div class="new">
+                            <i class="fa-solid fa-user"></i>&nbsp;&nbsp; <h2>Edit Profile</h2>
+
+                        </div>
+                        <div class="info">
+                            <h3>
+                                Full Name
+                            </h3>
+                            <input name="name" type="text" class="input" value="<%= Vendor.ownerName %>">
+                            <h3>Phone Number</h3>
+                            <input name="number" type="text" class="input" value="<%= Vendor.ownerNumber %>">
+                            <h3>Email</h3>
+                            <input name="email" type="email" class="input" value="<%= Vendor.ownerMail %>">
+
+                            <button class="btn" type="submit">Save Changes</button>
+                        </div>
+
+                    </form>
+                </div>
+        </div>
+</body>
+
+</html>

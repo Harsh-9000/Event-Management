@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/UserDashboardEventsPageStyles.css">
+    <link rel="stylesheet" href="/css/dashboardStyles.css">
+    <script src="https://kit.fontawesome.com/e60263fb6b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <%- include("partials/userDashboardSidebar") -%>
+
+        <div class="container">
+            <%- include("partials/dashboardHeader") -%>
+
+                <div class="content">
+                    <div class="content2">
+                        <div class="recentevents">
+                            <div class="title">
+                                <h2>Active Events</h2>
+                            </div>
+                            <table>
+                                <tr>
+                                    <th>Event Date</th>
+                                    <th>Occasion</th>
+                                    <th>City</th>
+                                    <th>Vendor(s)</th>
+                                    <th>Venue(s)</th>
+                                </tr>
+                                <% events.forEach(function(event){ %>
+                                    <% if(event.paymentStatus){ %>
+                                        <tr>
+                                            <td>
+                                                <%= event.eventDate %>
+                                            </td>
+                                            <td>
+                                                <%= event.occasion %>
+                                            </td>
+                                            <td>
+                                                <%= event.city %>
+                                            </td>
+                                            <td>
+                                                <%= event.vendorName %>
+                                            </td>
+                                            <td>
+                                                <%= event.venueName %>
+                                            </td>
+                                        </tr>
+                                        <% }}) %>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        </div>
+</body>
+
+</html>

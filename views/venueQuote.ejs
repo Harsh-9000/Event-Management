@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Friconix -->
+    <script defer src="https://friconix.com/cdn/friconix.js"></script>
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="/css/VenueQuoteStyles.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <title>Responsive Regisration Form </title>
+
+    <link rel="icon" href="favicon.ico" />
+</head>
+
+<body>
+    <%- include("partials/header") -%>
+
+        <!-- Register Header -->
+        <section class="container-fluid" id="header">
+            <div class="register-header">
+                <h1>Get Quotes</h1>
+                <h4>Get best suited venues for your event</h4>
+                <h6>Compare proposals and quotes from recommended venues. Select and Book the best.</h6>
+            </div>
+        </section>
+
+        <!-- Registeration Section-->
+        <section id="register">
+            <div class="container">
+                <form action="getquote" method="post">
+                    <div class="form first">
+
+                        <div class="details venue">
+                            <div class="fields">
+                                <div class="input-field">
+                                    <label>
+                                        <h6>Event / Occasion *</h6>
+                                    </label>
+                                    <select name="eventType" readonly class="event-selector"
+                                        data-placeholder="What type of event are you planning ?"
+                                        title="Select Your Event">
+                                        <option value="">Select Event</option>
+                                        <option value="Wedding">Wedding </option>;
+                                        <option value="Wedding Reception">Wedding Reception </option>;
+                                        <option value="Wedding Anniversary">Wedding Anniversary </option>;
+                                        <option value="Ring Ceremony">Ring Ceremony </option>;
+                                        <option value="Birthday Party">Birthday Party </option>;
+                                        <option value="Bachelor Party ">Bachelor Party </option>;
+                                        <option value="Business Dinner ">Business Dinner </option>;
+                                        <option value="Childrens Party">Childrens Party </option>;
+                                        <option value="Conference">Conference </option>;
+                                        <option value="Corporate Event">Corporate Event </option>;
+                                        <option value="Corporate Party">Corporate Party </option>;
+                                        <option value="Exhibition">Exhibition </option>;
+                                        <option value="House Party">House Party </option>;
+                                        <option value="Family Function">Family Function </option>;
+                                        <option value="Family Get Together">Family Get Together </option>;
+                                        <option value="Farewell">Farewell </option>;
+                                        <option value="Freshers Party">Freshers Party </option>;
+                                        <option value="Kitty Party">Kitty Party </option>;
+                                        <option value="Team Outing">Team Outing </option>;
+                                        <option value="Annual Fest">Annual Fest </option>;
+                                    </select>
+                                    <div class="error-hint hidden">
+                                        <p>Event/Occasion is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="input-field">
+                                    <label>
+                                        <h6>City *</h6>
+                                    </label>
+                                    <select name="eventCity" readonly class="city-selector"
+                                        data-placeholder="Select your city" title="Select Your City">
+                                        <option value="">Select City</option>
+                                        <option value="Delhi">Delhi </option>;
+                                        <option value="Gurgaon">Gurgaon </option>;
+                                        <option value="Mumbai">Mumbai </option>;
+                                        <option value="Hyderabad">Hyderabad </option>;
+                                        <option value="Bangalore">Bangalore </option>;
+                                        <option value="Pune">Pune </option>;
+                                        <option value="Kolkata">Kolkata </option>;
+                                        <option value="Jaipur">Jaipur </option>;
+                                        <option value="Lucknow">Lucknow </option>;
+                                        <option value="Chennai">Chennai </option>;
+                                    </select>
+                                    <div class="error-hint hidden">
+                                        <p>City is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="input-field">
+                                    <label>
+                                        <h6>Expected Guests *</h6>
+                                    </label>
+                                    <input name="guestQuantity" type="text"
+                                        placeholder="How many guests are you expecting ?">
+                                    <div class="error-hint hidden">
+                                        <p>Number of expected guests is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="input-field">
+                                    <label>
+                                        <h6>Per Person Budget *</h6>
+                                    </label>
+                                    <select name="budget" readonly class="budget-selector"
+                                        data-placeholder="Select per person budge" title="Select Budget">
+                                        <option value="">Select Per Person Budget</option>
+                                        <option value="1600-5000">Rs 1600+</option>
+                                        <option value="1400-1600">Rs 1400-1600</option>
+                                        <option value="1200-1400">Rs 1200-1400</option>
+                                        <option value="1000-1200">Rs 1000-1200</option>
+                                        <option value="800-1000">Rs 800-1000</option>
+                                        <option value="600-800">Rs 600-800</option>
+                                        <option value="400-600">Rs 400-600</option>
+                                    </select>
+                                    <div class="error-hint hidden">
+                                        <p>Budget is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="input-field">
+                                    <label>
+                                        <h6>Event Date *</h6>
+                                    </label>
+                                    <input name="eventDate" type="date" placeholder="Please select occasion date">
+                                    <div class="error-hint hidden">
+                                        <p>Event Date is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="input-field">
+                                    <label>
+                                        <h6>Your Name *</h6>
+                                    </label>
+                                    <input name="name" type="text" placeholder="Your Name">
+                                    <div class="error-hint hidden">
+                                        <p>Your Name is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="input-field">
+                                    <label>
+                                        <h6>Mobile Number *</h6>
+                                    </label>
+                                    <input name="number" type="text" placeholder="Your mobile number">
+                                    <div class="error-hint hidden">
+                                        <p>Your Mobile Number is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="input-field">
+                                    <label>
+                                        <h6>Email ID*</h6>
+                                    </label>
+                                    <input name="mail" type="text" placeholder="Your email address">
+                                    <div class="error-hint hidden">
+                                        <p>Your Email is required</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="buttons">
+                                <button class="sumbit" type="sumbit" name="button">SUBMIT</button>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </section>
+
+
+        <%- include("partials/footer") -%>
+
+            <!-- Bootstrap Scripts -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+                crossorigin="anonymous"></script>
+
+            <!-- jQuery Scripts -->
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+                integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+            <!-- Javascript -->
+            <script type="text/javascript" src="/script/VenueQuoteScript.js"></script>
+            <script type="text/javascript" src="/script/script.js"></script>
+</body>
+
+</html>

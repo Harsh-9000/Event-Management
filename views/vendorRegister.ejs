@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+
+    <!-- Friconix -->
+    <script defer src="https://friconix.com/cdn/friconix.js"></script>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="/css/VendorRegisterStyles.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <link rel="icon" href="favicon.ico" />
+</head>
+
+<body>
+    <%- include("partials/header") -%>
+        <!--Picture Section-->
+        <section class="container-fluid" id="header">
+            <div class="listing-header">
+                <div class="title-and-subtitle">
+                    <h1 class="main-title">Attract New Customers on OccassionMate</h1>
+                    <h5 class="sub-title">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia deleniti
+                        suscipit, quo totam voluptas blanditiis.
+                    </h5>
+                    <div class="stats-container">
+                        <div>
+                            <h1 class="stats">12,000+</h1>
+                            <h5 class="stats subtitle">Vendors</h5>
+                        </div>
+
+                        <div>
+                            <h1 class="stats">1,000+</h1>
+                            <h5 class="stats subtitle">Leads Everyday</h5>
+                        </div>
+
+                        <div>
+                            <h1 class="stats">40+</h1>
+                            <h5 class="stats subtitle">Cities</h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="review">
+                    <div class="title">
+                        <h5>Boost your business with OccassionMate!</h5>
+                    </div>
+
+                    <div class="content">
+                        <form action="/vendors/list-vendor" method="post">
+
+                            <div class="fields">
+
+                                <div class="input-field">
+                                    <input name="businessName" type="text" placeholder="Your business name">
+                                    <div class="error-hint hidden">
+                                        <p>Business Name is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="input-field">
+                                    <input name="businessAddress" type="text" placeholder="Your business Address">
+                                    <div class="error-hint hidden">
+                                        <p>Business Address is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="input-field">
+                                    <input name="ownerName" type="text" placeholder="Your full name">
+                                    <div class="error-hint hidden">
+                                        <p>Your Name is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="input-field">
+                                    <input name="ownerNumber" type="text" placeholder="Your phone number">
+                                    <div class="error-hint hidden">
+                                        <p>Your Phone Number is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="input-field">
+                                    <input name="ownerMail" type="email" placeholder="Your email">
+                                    <div class="error-hint hidden">
+                                        <p>Your Email is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="input-field">
+                                    <input name="ownerPassword" type="password" placeholder="Your password">
+                                    <div class="error-hint hidden">
+                                        <p>Your Password is required</p>
+                                    </div>
+                                    <div class="error-hint hidden">
+                                        <p>Password length should be atleast 8</p>
+                                    </div>
+                                </div>
+
+                                <div class="fields">
+                                    <select readonly name="city" class="last city-selector"
+                                        data-placeholder="Select your city" title="Select Your City">
+                                        <option value="">Your Serviced City</option>
+                                        <option value="Delhi">Delhi </option>;
+                                        <option value="Gurgaon">Gurgaon </option>;
+                                        <option value="Mumbai">Mumbai </option>;
+                                        <option value="Hyderabad">Hyderabad </option>;
+                                        <option value="Bangalore">Bangalore </option>;
+                                        <option value="Pune">Pune </option>;
+                                        <option value="Kolkata">Kolkata </option>;
+                                        <option value="Jaipur">Jaipur </option>;
+                                        <option value="Lucknow">Lucknow </option>;
+                                        <option value="Chennai">Chennai </option>;
+                                    </select>
+                                    <div class="error-hint hidden">
+                                        <p>City is required</p>
+                                    </div>
+                                </div>
+
+                                <div class="fields">
+                                    <select readonly name="vendorService" class="last service-selector"
+                                        data-placeholder="Type of Service" title="Select Your Event">
+                                        <option value="">Service Type</option>
+                                        <option value="Bands">Bands </option>;
+                                        <option value="Bridal Wear">Bridal Wear </option>;
+                                        <option value="Cakes">Cakes </option>;
+                                        <option value="Caterers">Caterers </option>;
+                                        <option value="Choreographers">Choreographers </option>;
+                                        <option value="Decorators">Decorators </option>;
+                                        <option value="DJ">DJ </option>;
+                                        <option value="Entertainers">Entertainers </option>;
+                                        <option value="Tent Houses">Tent Houses </option>;
+                                        <option value="Florists">Florists </option>;
+                                        <option value="Gifts">Gifts </option>;
+                                        <option value="Groom Wear">Groom Wear </option>;
+                                        <option value="Jewellers">Jewellers </option>;
+                                        <option value="Magician">Magician </option>;
+                                        <option value="Makeup Artists">Makeup Artists </option>;
+                                        <option value="Mehndi Artists">Mehndi Artists </option>;
+                                        <option value="Photographers">Photographers </option>;
+                                        <option value="Invitations">Invitations </option>;
+                                    </select>
+                                    <div class="error-hint hidden">
+                                        <p> Vendor Service is required</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="buttons">
+                                <button class="sumbit" type="submit">Add your Business</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="container-fluid" id="reasons">
+            <h3>Why List With Us ?</h3>
+
+            <div class="reasons-list">
+
+                <div class="reason">
+                    <img src="https://www.venuelook.com/images/vendor-images/business-lead-icon.png" alt="">
+                    <h5>Lorem, ipsum.</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi libero velit nulla.</p>
+                </div>
+
+                <div class="reason">
+                    <img src="https://www.venuelook.com/images/vendor-images/business-icon-2.png" alt="">
+                    <h5>Lorem, ipsum.</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi libero velit nulla.</p>
+                </div>
+
+                <div class="reason">
+                    <img src="https://www.venuelook.com/images/vendor-images/business-icon-3.png" alt="">
+                    <h5>Lorem, ipsum.</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi libero velit nulla.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="container-fluid" id="benefits">
+
+            <div class="content">
+                <img src="https://blog.venuelook.com/wp-content/uploads/2021/05/How-Much-To-Tip-Wedding-Vendors.jpg"
+                    alt="">
+                <h2 class="heading">Add Your Business with OccassionMate</h2>
+                <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, natus animi?
+                    Aliquid quasi corporis aliquam veritatis! Nemo nihil quasi ipsam?</p>
+
+                <ul>
+                    <li class="point"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, sed.
+                    </li>
+
+                    <li class="point">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, culpa.</li>
+
+                    <li class="point">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, nostrum.</li>
+                </ul>
+
+                <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quos autem,
+                    consequuntur iusto voluptatibus cum.</p>
+            </div>
+
+        </section>
+
+
+        <section class="container-fluid" id="vendors-testimonials">
+
+            <h3>What our vendors say...</h3>
+            <section class="container">
+                <div class="testimonial mySwiper">
+                    <div class="testi-content swiper-wrapper">
+                        <div class="slide swiper-slide">
+                            <img src="/Images/Testimonials/Testimonial1.jpg" alt="" class="image" />
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
+                                saepe provident dolorem a quaerat quo error facere nihil deleniti
+                                eligendi ipsum adipisci, fugit, architecto amet asperiores
+                                doloremque deserunt eum nemo.
+                            </p>
+
+                            <i class="bx bxs-quote-alt-left quote-icon"></i>
+
+                            <div class="details">
+                                <span class="name">Marnie Lotter</span>
+                            </div>
+                        </div>
+                        <div class="slide swiper-slide">
+                            <img src="/Images/Testimonials/Testimonial2.jpg" alt="" class="image" />
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
+                                saepe provident dolorem a quaerat quo error facere nihil deleniti
+                                eligendi ipsum adipisci, fugit, architecto amet asperiores
+                                doloremque deserunt eum nemo.
+                            </p>
+
+                            <i class="bx bxs-quote-alt-left quote-icon"></i>
+
+                            <div class="details">
+                                <span class="name">Marnie Lotter</span>
+                            </div>
+                        </div>
+                        <div class="slide swiper-slide">
+                            <img src="/Images/Testimonials/Testimonial3.jpg" alt="" class="image" />
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
+                                saepe provident dolorem a quaerat quo error facere nihil deleniti
+                                eligendi ipsum adipisci, fugit, architecto amet asperiores
+                                doloremque deserunt eum nemo.
+                            </p>
+
+                            <i class="bx bxs-quote-alt-left quote-icon"></i>
+
+                            <div class="details">
+                                <span class="name">Marnie Lotter</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next nav-btn"></div>
+                    <div class="swiper-button-prev nav-btn"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+        </section>
+
+        <%- include("partials/footer") -%>
+
+            <!-- Bootstrap Scripts -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+                crossorigin="anonymous"></script>
+
+            <!-- jQuery Scripts -->
+            <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+            <!-- Swiper Scripts -->
+            <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+            <!-- Javascript -->
+            <script type="text/javascript" src="/script/VendorRegisterScript.js"></script>
+            <script type="text/javascript" src="/script/script.js"></script>
+</body>
+
+</html>

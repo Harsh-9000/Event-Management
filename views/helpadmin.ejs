@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/AdminDashboardEventsPageStyles.css">
+    <link rel="stylesheet" href="/css/dashboardStyles.css">
+    <script src="https://kit.fontawesome.com/e60263fb6b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <%- include("partials/admindashsidebar") -%>
+
+        <div class="container">
+            <%- include("partials/admindashheader") -%>
+
+                <div class="content">
+                    <div class="content2">
+                        <div class="recentevents">
+                            <div class="title">
+                                <h2>Problems</h2>
+                            </div>
+                            <table>
+                                <tr>
+                                    <th>Email</th>
+                                    <th>Message</th>
+                                   
+                    
+                                </tr>
+                                <% help.forEach(function(hp){ %>
+                                    
+                                        <tr>
+                                            <td>
+                                                <%= hp.email %>
+                                            </td>
+                                            <td>
+                                                <%= hp.message %>
+                                            </td>
+                            
+                                        </tr>
+                                        <% }) %>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        </div>
+</body>
+
+</html>

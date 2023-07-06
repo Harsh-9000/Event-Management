@@ -1,0 +1,420 @@
+body {
+    background: #93bfcf;
+    margin: 0;
+}
+
+.mySlides {
+    display: none
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.changing-pics {
+    height: 500px;
+    width: 100%;
+    vertical-align: middle;
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+
+    .prev,
+    .next,
+    .text {
+        font-size: 11px
+    }
+}
+
+.left-half {
+    width: 45%;
+}
+
+.main-content {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.box {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    border: 1px solid black;
+}
+
+.intro-con {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    border-bottom: 1px solid black;
+}
+
+.column-2 img {
+    height: 20px;
+    width: 20px;
+}
+
+.stats {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+
+.bttns {
+    width: 25%;
+    margin: 10px 0;
+    border-right: 0.5px solid #333;
+    font-size: larger;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: end;
+    min-height: 50px;
+}
+
+.bttns:last-of-type {
+    border: none;
+}
+
+.bttns img {
+    height: 20px;
+    width: 20px;
+}
+
+.column-1 h3 {
+    font-size: xx-large;
+    margin: 5px 0;
+    margin-bottom: 0;
+}
+
+#loc {
+    height: 20px;
+    width: 30px;
+}
+
+.location {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 2px;
+    font-size: large;
+    font-weight: 500;
+}
+
+.links {
+    font-size: medium;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.sr {
+    margin: 15px 0;
+    font-size: larger;
+    display: flex;
+    align-items: center;
+}
+
+.sr img {
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+}
+
+.des {
+    font-size: large;
+    margin-bottom: 15px;
+}
+
+.column-1 {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.rat {
+    font-size: x-large;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.rev {
+    font-size: larger;
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.submit-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit {
+    width: 100%;
+    height: 60px;
+    font-size: large;
+    background-color: #fff;
+    border: 3px solid #6096b4;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s ease-out;
+    margin-top: 42px;
+}
+
+.submit:hover {
+    background-color: #6096b4;
+    color: #fff;
+}
+
+.right-half {
+    width: 45%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    border: 3px solid #555;
+    height: 800px;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.pr-head img {
+    height: 30px;
+    width: 30px;
+}
+
+.veg {
+    display: flex;
+    flex-direction: column;
+}
+
+.pr-head {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 15px;
+}
+
+.prices {
+    width: 45%;
+}
+
+.menu-price-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.main-des {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+#h {
+    margin: 20px 0;
+}
+
+.price {
+    font-size: large;
+}
+
+.price span {
+    font-size: medium;
+}
+
+.cap-title img {
+    height: 30px;
+    width: 30px;
+}
+
+.cap {
+    width: 45%;
+    margin-top: 10px;
+}
+
+.capacity {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cap-title {
+    display: flex;
+    align-items: center;
+    font-size: large;
+    margin-top: 15px;
+}
+
+.box-2 {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    width: 95%;
+    height: 275px;
+    border: 1px solid black;
+}
+
+.capacity-title {
+    font-size: larger;
+    margin-left: 15px;
+}
+
+.cap-ans {
+    font-size: large;
+}
+
+.box-type {
+    width: 95%;
+    background-color: #fff;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.box-head {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-left: 5px solid black;
+}
+
+.box-head img {
+    height: 30px;
+    width: 30px;
+    margin: 15px 10px;
+}
+
+.des-box-head {
+    height: 100%;
+    font-size: xx-large;
+    font-weight: 400;
+    margin: 15px 5px;
+}
+
+.box-body img {
+    width: 50px;
+    height: 50px;
+    margin: 10px 15px;
+}
+
+.box-body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 10px;
+    border-top: 2px solid black;
+}
+
+.phno {
+    font-size: x-large;
+    margin-left: 10px;
+}
+
+#room {
+    justify-content: center;
+}
+
+.room-det {
+    width: 96%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.con {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.ques {
+    font-size: larger;
+    font-weight: 525;
+}
+
+.ans {
+    font-size: larger;
+}
+
+#cuis {
+    height: 200px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+#cuis img {
+    height: 20px;
+    width: 20px;
+}
+
+.contents {
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+}
+
+.con-des {
+    font-size: larger;
+}
+
+#summary {
+    flex-direction: column;
+}
+
+#summary p {
+    margin-top: 1.5px;
+}

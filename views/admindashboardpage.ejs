@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/AdminDashboardPageStyles.css">
+    <link rel="stylesheet" href="/css/dashboardStyles.css">
+    <script src="https://kit.fontawesome.com/e60263fb6b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <%- include("partials/admindashsidebar") -%>
+
+        <div class="container">
+            <%- include("partials/admindashheader") -%>
+
+                <div class="content">
+                    <div class="cards">
+                        <div class="card">
+                            <div class="box">
+                                <h1 class="count" data-val="50">0</h1>
+                                <h3>Events</h3>
+                            </div>
+                            <div class="iconcase">
+                                <img src="/Images/events.png" alt="">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="box">
+                                <h1 class="count" data-val="60">0</h1>
+                                <h3>Vendors</h3>
+                            </div>
+                            <div class="iconcase">
+                                <img src="/Images/cashier.png" alt="">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="box">
+                                <h1 class="count" data-val="30">0</h1>
+                                <h3>Venues</h3>
+                            </div>
+                            <div class="iconcase">
+                                <img src="/Images/location.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content2">
+                        <div class="recentevents">
+                            <div class="title">
+                                <h2>Active Events</h2>
+                                <a href="/user-dashboard/active-events" class="btn">View All</a>
+                            </div>
+                            <table>
+                                <tr>
+                                    <th>Event Date</th>
+                                    <th>Occasion</th>
+                                    <th>Guest</th>
+                                    <th>Budget</th>
+                                    <th>City</th>
+                                    <th>Pref.Location</th>
+                                    <th>Event Status</th>
+                                </tr>
+                                <tr>
+                                    <td>26/01/2003</td>
+                                    <td>Wedding</td>
+                                    <td>50</td>
+                                    <td>100000</td>
+                                    <td>Mumbai</td>
+                                    <td>Mumbai</td>
+                                    <td>Confirmed</td>
+                                </tr>
+                                <tr>
+                                    <td>26/01/2003</td>
+                                    <td>Wedding</td>
+                                    <td>50</td>
+                                    <td>100000</td>
+                                    <td>Mumbai</td>
+                                    <td>Mumbai</td>
+                                    <td>Confirmed</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="newevents">
+                            <div class="title">
+                                <h2>Vendor Enquiries</h2>
+                                <a href="/user-dashboard/vendor-enquiries" class="btn">View All</a>
+                            </div>
+                            <table>
+                                <tr>
+                                    <th>Event Date</th>
+                                    <th>Occasion</th>
+                                    <th>Vendors Enq</th>
+                                    <th>Total Budget</th>
+                                    <th>City</th>
+                                    <th>Event Status</th>
+                                </tr>
+                                <tr>
+                                    <td>26/01/2002</td>
+                                    <td>Birthday</td>
+                                    <td>Caterers</td>
+                                    <td>100000</td>
+                                    <td>Delhi</td>
+                                    <td>Pending</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <!-- <script src="/script/UserDashboardPageScript.js"></script> -->
+</body>
+
+</html>

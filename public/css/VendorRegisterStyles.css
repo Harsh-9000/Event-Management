@@ -1,0 +1,421 @@
+body {
+    background: #eee9da;
+}
+
+/* Search Section */
+#header {
+    margin: 0;
+    padding: 0;
+}
+
+.listing-header {
+    display: flex;
+    justify-content: space-around;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://www.weddingsutra.com/images/2019/08/slider_3.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center top;
+}
+
+.title-and-subtitle {
+    padding-left: 5rem;
+    max-width: 700px;
+}
+
+.stats {
+    color: #fff;
+    text-align: center;
+}
+
+.stats-container {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.subtitle {
+    font-weight: 300;
+}
+
+.title-and-subtitle .main-title {
+    color: #fff;
+    text-align: left;
+    filter: brightness(100%);
+    padding: 5rem 0 0 1rem;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.title-and-subtitle .sub-title {
+    color: #fff;
+    text-align: left;
+    padding: 0 0 0 1rem;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.review {
+    margin-top: 30px;
+    background: #eee9da;
+    box-shadow: 0 5px 10px rgba(0.1, 0.1, 0.1, 0.1);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%;
+    margin-right: 60px;
+}
+
+form {
+    position: relative;
+    margin-top: 16px;
+    min-height: 400px;
+    background-color: #eee9da;
+    overflow: hidden;
+}
+
+form .title {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 6px 0;
+    color: #000;
+}
+
+form .fields {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+form .fields .input-field {
+    display: flex;
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.input-field input,
+select {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 4px 0;
+    background: #eee9da;
+    width: 200px;
+}
+
+select.last,
+input.last {
+    width: 440px;
+}
+
+.input-field input :focus,
+.input-field select:focus {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+}
+
+.input-field input.invalid,
+textarea.invalid,
+select.invalid {
+    border: 1px solid red;
+}
+
+.error-hint {
+    margin: 5px;
+    color: red;
+    font-size: 12px;
+}
+
+.hidden {
+    display: none;
+}
+
+form .buttons {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.buttons button {
+    margin-right: 10px;
+    position: relative;
+    padding: 10px 18px;
+    border: 2px solid #6096b4;
+    display: inline-block;
+    text-decoration: none;
+    color: #6096b4;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    overflow: hidden;
+    background: #eee9da;
+}
+
+.buttons button:hover {
+    color: #eee9da;
+    background: #6096b4;
+}
+
+
+.review-form textarea {
+    padding: 10px;
+    width: 100%;
+    margin: 5px 0;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 18px;
+    border: 3px solid #ddd;
+    color: #777;
+    background: #eeedeb;
+}
+
+.review .content {
+    padding: 30px;
+}
+
+.review .title {
+    border-bottom: solid #24262b 1px;
+    text-align: center;
+    padding: 15px;
+    color: #4b95af;
+}
+
+#reasons {
+    padding-top: 3rem;
+    text-align: center;
+}
+
+#reasons h3:after {
+    content: "";
+    margin-top: 0.5rem;
+    margin-left: 43rem;
+    width: 5%;
+    height: 3px;
+    display: block;
+    background-color: #6096b4;
+}
+
+.reasons-list {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.reasons-list h5 {
+    padding-top: 2rem;
+}
+
+.reason {
+    max-width: 300px;
+    width: 100%;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+@media (max-width: 900px) {
+    .reasons-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.get-started-btn {
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 2px solid #6096b4;
+    color: #6096b4;
+    padding: 10px 10px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 0.3s linear;
+    text-decoration: none;
+}
+
+.list-btn {
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 2px solid #24262b;
+    color: #24262b;
+    padding: 10px 10px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 0.3s linear;
+    text-decoration: none;
+}
+
+.list-btn:hover {
+    border: 2px solid #eee9da;
+    background-color: #eee9da;
+    color: #6096b4;
+}
+
+.get-started-btn:hover {
+    background-color: #6096b4;
+    color: #fff;
+}
+
+.check-blue {
+    color: rgb(88, 179, 179);
+}
+
+@media (max-width: 930px) {
+    .main-title {
+        padding: 0;
+    }
+
+    .sub-title {
+        padding: 0 0 2rem 0;
+    }
+}
+
+/* benefits */
+#benefits {
+    padding-top: 1rem;
+    min-height: 520px;
+    background: #93bfcf;
+}
+
+#benefits img {
+    margin-top: 2rem;
+    float: right;
+    padding-right: 50px;
+    padding-left: 50px;
+    width: 50%;
+    border-radius: 15%;
+}
+
+#benefits .heading {
+    padding-top: 1rem;
+}
+
+#benefits p {
+    padding-top: 2rem;
+}
+
+#benefits li {
+    padding-top: 1rem;
+}
+
+#benefits {
+    padding-left: 2rem;
+}
+
+#vendors-testimonials {
+    text-align: center;
+    padding: 2rem;
+}
+
+.container {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee9da;
+}
+
+.testimonial {
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    padding: 50px 0;
+    overflow: hidden;
+}
+
+.testimonial .image {
+    height: 170px;
+    width: 170px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.testimonial .slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 30px;
+    height: 100%;
+    width: 100%;
+}
+
+.slide p {
+    text-align: center;
+    padding: 0 160px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+}
+
+.slide .quote-icon {
+    font-size: 30px;
+    color: #4070f4;
+}
+
+.slide .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details .name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* swiper button css */
+.nav-btn {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transform: translateY(30px);
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn::after,
+.nav-btn::before {
+    font-size: 20px;
+    color: #fff;
+}
+
+.swiper-pagination-bullet {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #4070f4;
+}
+
+@media screen and (max-width: 768px) {
+    .slide p {
+        padding: 0 20px;
+    }
+
+    .nav-btn {
+        display: none;
+    }
+}

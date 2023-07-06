@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+/* Registeration Section */
+#package {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #93bfcf;
+}
+
+.container {
+    margin: 5rem;
+    position: relative;
+    max-width: 1100px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    background-color: #eee9da;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Pricing Table */
+.pricing-table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: min(1600px, 100%);
+    margin: 1em auto 3em auto;
+}
+
+.pricing-card {
+    flex: 1;
+    max-width: 360px;
+    background-color: #fff;
+    margin: 20px 10px;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    color: #2D2D2D;
+    transition: 0.3s linear;
+    box-shadow: -2px 2px 70px -25px rgba(0, 0, 0, 0.5);
+}
+
+.pricing-card ul {
+    padding: 0;
+}
+
+.pricing-card-header {
+    background-color: #6096b4;
+    display: inline-block;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 0 0 20px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: 0.4s linear;
+}
+
+.pricing-card:hover .pricing-card-header {
+    box-shadow: 0 0 0 550px #6096b4;
+}
+
+.price {
+    font-size: 70px;
+    color: #6096b4;
+    margin: 20px 0;
+    transition: 0.2s linear;
+}
+
+.price sup,
+.price span {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.pricing-card:hover,
+.pricing-card:hover .price {
+    color: #fff;
+}
+
+.pricing-card li {
+    font-size: 14px;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    border-bottom: #24262b solid 1px;
+}
+
+li.last {
+    border-bottom: none;
+}
+
+
+.buy-now-btn {
+    display: inline-block;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    border: 2px solid #6096b4;
+    color: #6096b4;
+    padding: 18px 40px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 0.3s linear;
+    text-decoration: none;
+}
+
+.buy-now-btn:hover {
+    background-color: #6096b4;
+    color: #fff;
+}
+
+@media screen and(max-width:1100px) {
+
+    .pricing-card {
+        flex: 50%;
+    }
+
+}

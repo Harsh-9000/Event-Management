@@ -1,0 +1,169 @@
+body {
+    background: #eee9da;
+}
+
+/* Search Section */
+#header {
+    margin: 0;
+    padding: 0;
+}
+
+.register-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.01)),
+        url("https://www.venuelook.com/images/flp-banner.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: fill;
+    background-position: center top;
+    padding: 5% 10% 3% 10%;
+}
+
+.main-title {
+    color: #fff;
+    text-align: center;
+    filter: brightness(100%);
+    padding: 5rem 0 0 0;
+}
+
+.sub-title {
+    color: #fff;
+    text-align: center;
+    padding: 1rem 15rem 6rem 15rem;
+}
+
+#reasons,
+#packages {
+    padding-top: 3rem;
+    text-align: center;
+}
+
+.reasons-list {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.reasons-list h5 {
+    padding-top: 2rem;
+}
+
+.reason {
+    padding: 2rem;
+    text-align: center;
+    max-width: 350px;
+}
+
+@media (max-width: 900px) {
+    .reasons-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 930px) {
+    .main-title {
+        padding: 0;
+    }
+
+    .sub-title {
+        padding: 0 0 2rem 0;
+    }
+}
+
+/* Pricing Table */
+.pricing-table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: min(1600px, 100%);
+    margin: 1em auto 3em auto;
+}
+
+.pricing-card {
+    flex: 1;
+    max-width: 360px;
+    background-color: #fff;
+    margin: 20px 10px;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    color: #2D2D2D;
+    transition: 0.3s linear;
+}
+
+.pricing-card ul {
+    padding: 0;
+}
+
+.pricing-card-header {
+    background-color: #6096b4;
+    display: inline-block;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 0 0 20px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: 0.4s linear;
+}
+
+.pricing-card:hover .pricing-card-header {
+    box-shadow: 0 0 0 650px #6096b4;
+}
+
+.price {
+    font-size: 70px;
+    color: #6096b4;
+    margin: 20px 0;
+    transition: 0.2s linear;
+}
+
+.price sup,
+.price span {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.pricing-card:hover,
+.pricing-card:hover .price {
+    color: #fff;
+}
+
+.pricing-card li {
+    font-size: 14px;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    border-bottom: #24262b solid 1px;
+}
+
+li.last {
+    border-bottom: none;
+}
+
+
+.buy-now-btn {
+    display: inline-block;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    border: 2px solid #6096b4;
+    color: #6096b4;
+    padding: 18px 40px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 0.3s linear;
+    text-decoration: none;
+}
+
+.buy-now-btn:hover {
+    background-color: #6096b4;
+    color: #fff;
+}
+
+@media screen and(max-width:1100px) {
+
+    .pricing-card {
+        flex: 50%;
+    }
+
+}

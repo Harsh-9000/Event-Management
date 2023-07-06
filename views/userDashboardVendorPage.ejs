@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/UserDashboardVendorPageStyles.css">
+    <link rel="stylesheet" href="/css/dashboardStyles.css">
+    <script src="https://kit.fontawesome.com/e60263fb6b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <%- include("partials/userDashboardSidebar") -%>
+
+        <div class="container">
+            <%- include("partials/dashboardHeader") -%>
+
+                <div class="content">
+                    <div class="content2">
+                        <div class="recentevents">
+                            <div class="title">
+                                <h2>Vendor Enquiries</h2>
+                            </div>
+                            <table>
+                                <tr>
+                                    <th>Vendor Name</th>
+                                    <th>Event Date</th>
+                                    <th>Occasion</th>
+                                    <th>Vendor Service</th>
+                                    <th>City</th>
+                                    <th>Request Status</th>
+                                    <th>Payment Status</th>
+                                </tr>
+                                <% enquiries.forEach(function(enquirie){ %>
+                                    <% if(enquirie.vendorName){%>
+                                        <tr>
+                                            <td>
+                                                <%= enquirie.vendorName %>
+                                            </td>
+                                            <td>
+                                                <%= enquirie.eventDate %>
+                                            </td>
+                                            <td>
+                                                <%= enquirie.occasion %>
+                                            </td>
+                                            <td>
+                                                <%= enquirie.vendorService %>
+                                            </td>
+                                            <td>
+                                                <%= enquirie.city %>
+                                            </td>
+                                            <td>
+                                                <%= enquirie.requestStatus %>
+                                            </td>
+                                            <td>
+
+                                                <% if(!enquirie.paymentStatus) {%>
+                                                    <% if(enquirie.requestStatus==="Accepted" ) {%>
+                                                        <a href="/user-dashboard/<%= UserID %>/vendor-enquiries/<%= enquirie._id %>/pay"
+                                                            class="btn">Pay</a>
+                                                        <% } else { %>
+                                                            No Payment Required
+                                                            <% } %>
+                                                                <% } else { %>
+                                                                    Done
+                                                                    <% } %>
+                                            </td>
+                                        </tr>
+                                        <% }}) %>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        </div>
+</body>
+
+</html>

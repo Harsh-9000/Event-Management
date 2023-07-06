@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+
+    <!-- Friconix -->
+    <script defer src="https://friconix.com/cdn/friconix.js"></script>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="/css/VendorPageStyles.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <%- include("partials/header") -%>
+
+        <!--card layout start-->
+        <section class="container">
+            <div class="main">
+                <h2 class="heading">
+                    <%= vendor.title %>
+                </h2>
+                <h6 class="subtitle"><i class="fi-xnsuxl-bank-solid"></i>
+                    <%= vendor.address %>
+                </h6>
+
+                <div class="photo-slider">
+                    <div class="images">
+                        <input type="radio" name="slide" id="img1" checked>
+                        <input type="radio" name="slide" id="img2">
+                        <input type="radio" name="slide" id="img3">
+                        <input type="radio" name="slide" id="img4">
+                        <input type="radio" name="slide" id="img5">
+
+                        <% for(let i=0;i<vendor.images.length;i++){ %>
+                            <img src="<%= vendor.images[i] %>" class="m<%= i+1 %>" alt="img<%= i+1 %>">
+                            <% } %>
+                    </div>
+
+                    <div class="dots">
+                        <label for="img1"></label>
+                        <label for="img2"></label>
+                        <label for="img3"></label>
+                        <label for="img4"></label>
+                        <label for="img5"></label>
+                    </div>
+                </div>
+
+                <div class="about-us">
+                    <div class="vendor-title">
+                        <h5><i class="fi-cnsuxm-info-solid"></i> About <%= vendor.title %>
+                        </h5>
+                    </div>
+
+                    <div class="about-us-info">
+                        <%= vendor.about %>
+                    </div>
+                </div>
+
+                <div class="specifications">
+
+                    <div class="vendor-title">
+                        <h5><i class="fi-xnsuxl-asterisk-solid"></i> Services Offered</h5>
+                    </div>
+
+                    <div class="services-offered">
+
+                        <div class="column-1">
+                            <ul>
+                                <% for(let i=0;i<vendor.services.length/2;i++){ %>
+                                    <li><i class="fi-cwsuxl-check special-icons"></i>
+                                        <%= vendor.services[i] %>
+                                    </li>
+                                    <% } %>
+                            </ul>
+                        </div>
+
+                        <div class="column-2">
+                            <ul>
+                                <% for(let i=Math.ceil((vendor.services.length)/2);i<vendor.services.length;i++){ %>
+                                    <li><i class="fi-cwsuxl-check special-icons"></i>
+                                        <%= vendor.services[i] %>
+                                    </li>
+                                    <% } %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review">
+                    <div class="vendor-title">
+                        <h5><i class="fi-xnsuxl-comment-solid"></i>Rating</h5>
+                    </div>
+
+                    <div class="content">
+                        <div class="wrapper">
+                            <form action="/vendors/<%= service %>/list/<%= vendor._id %>" method="post">
+
+                                <div class="rating">
+                                    <input type="number" name="rating" hidden>
+                                    <i class='bx bx-md bx-star star' style="--i:0"></i>
+                                    <i class='bx bx-md bx-star star' style="--i:1"></i>
+                                    <i class='bx bx-md bx-star star' style="--i:2"></i>
+                                    <i class='bx bx-md bx-star star' style="--i:3"></i>
+                                    <i class='bx bx-md bx-star star' style="--i:4"></i>
+                                </div>
+
+                                <div class="submit-button">
+                                    <button type="submit">Rate</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="sidebar">
+                <div class="submit-button-black">
+                    <button class="sumbit" type="button"><i class="fi-xwluxl-share-wide"></i> Share</button>
+                </div>
+
+                <div class="request-quote">
+                    <div class="submit-button">
+                        <a href="<%= vendor._id %>/getquote"><button class="sumbit" type="button">Request For
+                                Quote</button></a>
+                    </div>
+                </div>
+
+                <div class="contact-address">
+                    <div class="vendor-title">
+                        <h5>Contact | Address</h5>
+                    </div>
+
+                    <div class="content">
+                        <h6><i class="fi-xnsuxl-house-solid"></i> Address</h6>
+                        <p>
+                            <%= vendor.address %>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="packages">
+                    <div class="vendor-title">
+                        <h5><i class="fi-xnsuxl-rupee"></i> Packages</h5>
+                    </div>
+
+                    <% for(let i=0;i<vendor.packages.length;i++){ %>
+                        <div class="content">
+                            <div class="column-1">
+                                <p>
+                                    <%= vendor.packages[i] %>
+                                </p>
+                            </div>
+
+                            <div class="column-2">
+                                <p><i class="fi-xnsuxm-rupee"></i>
+                                    <%= vendor.price[i] %>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="includes">
+                            <table>
+                                <tr>
+                                    <th>Includes</th>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <%= vendor.packagesInfo[i] %>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <% } %>
+                </div>
+
+                <div class="terms-conditions">
+                    <div class="vendor-title">
+                        <h5><i class="fi-cnsuxl-info-solid"></i> Terms and Conditions</h5>
+                    </div>
+
+                    <div class="content">
+                        <h6>Booking Policy</h6>
+                        <p>
+                            <%= vendor.bookingPolicy %>
+                        </p>
+
+                        <h6>Cancellation Policy</h6>
+                        <p>
+                            <%= vendor.cancellationPolicy %>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!--card layout end-->
+
+        <%- include("partials/footer") -%>
+            <!-- Bootstrap Scripts -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+                crossorigin="anonymous"></script>
+
+            <!-- jQuery Scripts -->
+            <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+            <!-- Swiper Scripts -->
+            <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+            <!-- Javascript -->
+            <script type="text/javascript" src="/script/VendorPageScript.js"></script>
+            <script type="text/javascript" src="/script/script.js"></script>
+</body>
+
+</html>

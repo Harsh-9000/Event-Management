@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/AdminDashboardEventsPageStyles.css">
+    <link rel="stylesheet" href="/css/dashboardStyles.css">
+    <script src="https://kit.fontawesome.com/e60263fb6b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <%- include("partials/admindashsidebar") -%>
+
+        <div class="container">
+            <%- include("partials/admindashheader") -%>
+
+                <div class="content">
+                    <div class="content2">
+                        <div class="recentevents">
+                            <div class="title">
+                                <h2>Our Users</h2>
+                            </div>
+                            <table>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>email</th>
+                                    <th>Number</th>
+                                    <th>delete</th>
+                    
+                                </tr>
+                                <% user.forEach(function(use){ %>
+                                    <% if(!use.isAdmin){ %>
+                                        <tr>
+                                            <td>
+                                                <%= use.name %>
+                                            </td>
+                                            <td>
+                                                <%= use.email %>
+                                            </td>
+                                            <td>
+                                                <%= use.number %>
+                                            </td>
+                                            
+                                            <td>
+                                                <a href="/user/<%= use._id %>"><i class="fa-solid fa-trash" style="color: red;"></i></a>
+                                            </td>
+                                        </tr>
+                                        <% }}) %>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        </div>
+</body>
+
+</html>

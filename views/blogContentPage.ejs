@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/BlogContentPageStyles.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <title>Event</title>
+</head>
+
+<body>
+    <div class = "background">
+
+        <%- include("partials/blogheader") -%>
+        <div class="content1">
+            <div class="gridcont1">
+                <img src="<%= blog.imageLink %>" class="img_grid1">
+                <div class="headingimg">
+                    <%= blog.title %>
+                </div>
+                <div class="imgcont">
+                    <br>
+                    <div class="continfoby">
+                        Uploaded by: <a href="#" class="nameofuploader">
+                            <%= blog.author %>
+                        </a>
+                    </div>
+                    <br>
+                    <div class="maincontent">
+                        <%= blog.content %>
+                    </div>
+                </div>
+            </div>
+            <div class="gridcont2">
+                <div class="form_head">
+                    <div class="sideform">
+                        <p class="insidecontform">
+                            Looking for a venue / event planner? Contact us..
+                        </p>
+                        <form class="formfill" onsubmit="return validation1()">
+                            <input type="text" class="boxfill" id="fname" name="firstname"
+                            placeholder="Your name.."><br>
+                            <input type="text" class="boxfill" id="email" name="email" placeholder="Your E-Mail.."><br>
+                            <input type="text" class="boxfill" id="usernum" name="Contactnumber"
+                            placeholder="Contact Number.."><br>
+                            <input type="submit" id="submitbtn" value="Call me Back">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="form_head">
+                    <div class="sideform">
+                        <p class="insidecontform">
+                            For Event planning Trends
+                        </p>
+                        <form class="formfill2" onsubmit="return validation2()">
+                            <input type="text" class="boxfill" id="email_subscriber" placeholder="E-Mail">
+                            <input type="submit" id="submitbtn" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <%- include("partials/footer") -%>
+    </div>
+        <script type="text/javascript" src="/script/BlogContentPageScript.js"></script>
+    </body>
+    
+    </html>

@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #eee9da;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+h1,
+h2 {
+    color: #444;
+}
+
+h3 {
+    color: #999;
+}
+
+.container .content {
+    position: relative;
+    margin-top: 8vh;
+    min-height: 90vh;
+}
+
+.invoice-box {
+    max-width: 940px;
+    padding: 30px;
+    border: 1px solid #eee;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.invoice-table {
+    padding: 0;
+    border-spacing: 0;
+}
+
+.invoice-box table {
+    width: 100%;
+    line-height: inherit;
+    text-align: left;
+}
+
+.invoice-box table td {
+    padding: 5px;
+    vertical-align: top;
+}
+
+.invoice-box table tr td:nth-child(2) {
+    text-align: right;
+}
+
+.invoice-box table tr.top table td {
+    padding-bottom: 20px;
+}
+
+.invoice-box table tr.information table td {
+    padding-bottom: 40px;
+}
+
+.invoice-box table tr.heading td {
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+}
+
+.invoice-box table tr.details td {
+    padding: 20px;
+}
+
+.invoice-box table tr.item td {
+    border-bottom: 1px solid #eee;
+}
+
+input {
+    border-radius: 5px;
+    border: 1px solid #444;
+    padding: 5px;
+}
+
+form {
+    display: grid;
+}
+
+@media only screen and(max-width:600px) {
+    .invoice-box table tr.top table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    .invoice-box table tr.information table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+}
+
+.btn {
+    height: 50px;
+    width: 200px;
+    background: #93bfcf;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    border: 2px solid #93bfcf;
+    margin-top: 20px;
+    font-size: large;
+    justify-self: center;
+}
+
+.btn:hover {
+    color: #93bfcf;
+    background: white;
+    border: 2px solid gray;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 10px;
+    border-bottom: 2px solid #999;
+}
+
+table {
+    padding: 10px;
+}
+
+.container {
+    position: absolute;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+    background: #eee9da;
+}
+
+.container .content {
+    position: relative;
+    margin-top: 8vh;
+    min-height: 90vh;
+
+}
+
+.container .content .content2 {
+    min-height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.container .content .content2 .recentevents {
+    width: 90%;
+    flex: 5;
+    background: white;
+    margin: 50px 75px 25px 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+
+}
+
+@media(max-width:815px) {
+    .container .content .content2 .recentevents {
+        display: flex;
+        flex-direction: row;
+        min-height: auto;
+        width: auto;
+    }
+}
+
+.container .content .content2 .newevents {
+    flex: 2;
+    background: white;
+    width: 90%;
+    margin: 0 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+@media(max-width:815px) {
+    .container .content .content2 .newevents {
+        display: flex;
+        flex-direction: row;
+        min-height: auto;
+        width: auto;
+    }
+}

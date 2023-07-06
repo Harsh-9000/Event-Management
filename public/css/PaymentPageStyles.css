@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    background: #93bfcf;
+}
+
+/* Registeration Section */
+#payment {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #93bfcf;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    max-width: 1100px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    margin: 0 15px;
+    background-color: #eee9da;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.reason {
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0.3, 0.3, 0.3, 0.3);
+}
+
+.column-one {
+    padding-right: 50px;
+}
+
+th {
+    background: #6096b4;
+    color: #eee9da;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+th,
+td {
+    padding: 10px;
+}
+
+.details td {
+    padding-right: 260px;
+}
+
+table {
+    margin-bottom: 30px;
+}
+
+tr {
+    border-bottom: 1px solid #000;
+    background-color: #cdcbc1;
+}
+
+tr.last {
+    border-bottom: none;
+}
+
+.reason img {
+    padding-bottom: 15px;
+}
+
+.reason p {
+    font-size: 13px;
+}
+
+.payment-options {
+    border-top: 1px solid #000;
+    margin-top: 100px;
+    padding-top: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.buttons button {
+    margin-right: 10px;
+    position: relative;
+    padding: 10px 18px;
+    border: 2px solid #6096b4;
+    display: inline-block;
+    text-decoration: none;
+    color: #6096b4;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    overflow: hidden;
+    background: #eee9da;
+}
+
+.buttons button:hover {
+    color: #eee9da;
+    background: #6096b4;
+}
